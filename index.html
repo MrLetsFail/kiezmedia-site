@@ -70,29 +70,60 @@ h2{font-size:clamp(36px,5.6vw,70px);line-height:.98;letter-spacing:-.05em;margin
 .rv{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}.rv.in{opacity:1;transform:none}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
 /* BEFORE/AFTER */
-.ba{position:relative;border-radius:var(--r);overflow:hidden;height:clamp(420px,52vw,580px);box-shadow:0 40px 80px -40px rgba(0,0,0,.45);user-select:none;--x:50%;border:1px solid var(--line);background:#fff}
+.ba{position:relative;width:100%;height:clamp(620px,92vh,920px);overflow:hidden;user-select:none;--x:40%;background:#000;margin:10px 0 0}
 .ba .pane{position:absolute;inset:0;overflow:hidden}
 .ba .new{clip-path:inset(0 0 0 var(--x))}
-.old{background:#c0c0c0;font-family:"Times New Roman",Times,serif;color:#000;padding:14px}
-.old .ttl{background:linear-gradient(#000080,#1084d0);color:#fff;font:bold 15px Tahoma,Arial,sans-serif;padding:4px 8px;margin:-14px -14px 12px}
-.old .banner{background:#ffff00;border:3px ridge #999;text-align:center;font:bold italic 30px "Comic Sans MS","Comic Sans",cursive;color:#ff0000;padding:10px;margin-bottom:10px}
-.old table{width:100%;border:2px outset #fff;background:#fff;border-collapse:separate}.old td{border:1px inset #999;padding:8px;vertical-align:top;font-size:15px}
-.old .navc{width:28%;background:#e0e0ff}.old .navc a{display:block;color:#0000ee;text-decoration:underline;margin:4px 0}
+/* alt */
+.old{background:#008080 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='20' height='20' fill='%23007373'/%3E%3Crect x='20' y='20' width='20' height='20' fill='%23007373'/%3E%3C/svg%3E");font-family:"Times New Roman",Times,serif;color:#000;padding:clamp(14px,2vw,30px)}
+.old .win{background:#c0c0c0;border:3px outset #fff;height:100%;display:flex;flex-direction:column;box-shadow:4px 4px 0 #000}
+.old .ttl{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font:bold 15px Tahoma,Arial,sans-serif;padding:5px 8px;display:flex;justify-content:space-between}.old .ttl span{background:#c0c0c0;color:#000;padding:0 6px;border:2px outset #fff;font-size:12px}
+.old .addr{font:13px Tahoma,Arial,sans-serif;padding:4px 8px;border-bottom:2px groove #fff;display:flex;gap:8px;align-items:center}.old .addr i{flex:1;background:#fff;border:2px inset #999;padding:2px 6px;font-style:normal}
+.old .body{flex:1;background:#fff;margin:6px;border:2px inset #999;padding:14px;overflow:hidden;background-image:radial-gradient(#e8e8ff 1px,transparent 1px);background-size:12px 12px}
+.old .banner{background:#ffff00;border:4px ridge #999;text-align:center;font:bold italic clamp(26px,3.4vw,48px) "Comic Sans MS","Comic Sans",cursive;color:#ff0000;padding:12px;text-shadow:3px 3px 0 #0000ff;margin-bottom:10px}
+.old .mq2{background:#000;color:#0f0;font:bold 16px "Courier New",monospace;white-space:nowrap;overflow:hidden;padding:4px 0;margin-bottom:12px}.old .mq2 span{display:inline-block;padding-left:100%;animation:mq2 14s linear infinite}@keyframes mq2{to{transform:translateX(-100%)}}
+.old table{width:100%;border:2px outset #fff;background:#fff;border-collapse:separate}.old td{border:1px inset #999;padding:10px;vertical-align:top;font-size:clamp(14px,1.2vw,17px)}
+.old .navc{width:22%;background:#e0e0ff}.old .navc a{display:block;color:#0000ee;text-decoration:underline;margin:6px 0}.old .navc a:visited{color:#551a8b}
 .old .blink{color:#ff0000;font-weight:bold;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
-.old .count{font-family:monospace;background:#000;color:#0f0;padding:2px 6px;display:inline-block}
-.old .uc{margin-top:10px;font-size:13px}
-.new{background:#101a2e;color:#fff;font-family:inherit}
-.new .nh{display:flex;justify-content:space-between;align-items:center;padding:20px 32px}.new .nh b{font-size:20px;letter-spacing:-.03em}.new .nh span{background:#ffb020;color:#101a2e;font-weight:800;padding:9px 18px;border-radius:999px;font-size:14px}
-.new .nb{padding:40px 32px 0 max(32px,var(--x))}
-.new h3{font-size:clamp(34px,4.6vw,62px);line-height:.95;letter-spacing:-.05em;margin:0 0 16px;max-width:11ch}.new h3 i{font-style:normal;color:#ffb020}
-.new p{color:#a9b4cc;max-width:36ch;margin:0 0 24px}.new .cards{display:flex;gap:12px;flex-wrap:wrap}.new .cards div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px 18px;font-weight:700;font-size:15px}
-.new .call{display:inline-block;background:#ffb020;color:#101a2e;font-weight:800;padding:15px 26px;border-radius:14px;margin-bottom:26px;text-decoration:none}
+.old .count{font-family:monospace;background:#000;color:#0f0;padding:2px 6px;display:inline-block;letter-spacing:2px}
+.old .uc{margin-top:12px;display:inline-block;background:repeating-linear-gradient(45deg,#ffcc00 0 12px,#000 12px 24px);padding:3px}.old .uc b{display:block;background:#ffcc00;padding:6px 10px;font:bold 14px Arial}
+.old .sm{font-size:12px;color:#666;margin-top:10px}
+/* neu */
+.new{background:#07090f;color:#fff;font-family:inherit}
+.nw{position:absolute;inset:0;display:grid;grid-template-columns:48% 52%}
+.nw .ph{position:relative;overflow:hidden}
+.nw .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.05);animation:nkb 20s ease-in-out infinite alternate}@keyframes nkb{to{transform:scale(1.12)}}
+.nw .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,15,.1),rgba(7,9,15,.35) 70%,#07090f),linear-gradient(0deg,rgba(7,9,15,.7),transparent 40%)}
+.volt{--e:#ffe600}
+.nw .chip{position:absolute;z-index:2;background:rgba(10,14,24,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,230,0,.35);border-radius:18px;padding:14px 18px;font-weight:800;display:flex;gap:12px;align-items:center;box-shadow:0 20px 50px rgba(0,0,0,.5);animation:nfl 5s ease-in-out infinite}
+.nw .chip small{display:block;font-weight:500;color:#aab3c5;font-size:13px}.nw .chip i{width:40px;height:40px;border-radius:12px;background:#ffe600;color:#07090f;display:grid;place-items:center;font-style:normal;font-size:20px}
+.nw .c1{left:6%;top:14%}.nw .c2{left:14%;bottom:18%;animation-delay:-2.5s}@keyframes nfl{50%{transform:translateY(-12px)}}
+.nw .live{position:absolute;z-index:2;left:6%;bottom:6%;display:flex;align-items:center;gap:10px;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase}.nw .live b{width:12px;height:12px;border-radius:50%;background:#39ff88;box-shadow:0 0 0 0 rgba(57,255,136,.7);animation:nping 1.6s infinite}@keyframes nping{70%{box-shadow:0 0 0 14px rgba(57,255,136,0)}}
+.nw .tx{position:relative;padding:clamp(26px,4vw,60px) clamp(24px,4vw,70px) 90px clamp(20px,3vw,50px);display:flex;flex-direction:column;justify-content:center;background:radial-gradient(600px circle at 70% 30%,rgba(255,230,0,.10),transparent 60%)}
+.nw .top{position:absolute;top:26px;left:clamp(20px,3vw,50px);right:clamp(24px,4vw,70px);display:flex;justify-content:space-between;align-items:center}
+.nw .logo2{font-weight:900;font-size:22px;letter-spacing:-.04em;display:flex;align-items:center;gap:8px}.nw .logo2 svg{width:26px;height:26px}
+.nw .tel{display:flex;align-items:center;gap:10px;font-weight:800;background:#ffe600;color:#07090f;padding:10px 18px;border-radius:999px;font-size:15px;position:relative}
+.nw .tel::before{content:"";position:absolute;inset:-4px;border-radius:999px;border:2px solid #ffe600;animation:ring 1.8s infinite}@keyframes ring{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(1.25)}}
+.nw .kk{color:#ffe600;font-weight:800;font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.nw h3{font-size:clamp(46px,6.6vw,118px);line-height:.88;letter-spacing:-.06em;margin:0 0 20px;font-weight:900;text-transform:uppercase}
+.nw h3 i{font-style:normal;color:#ffe600;text-shadow:0 0 30px rgba(255,230,0,.55),0 0 80px rgba(255,230,0,.25);animation:flick 5s infinite}
+@keyframes flick{0%,19%,21%,62%,64%,100%{opacity:1}20%,63%{opacity:.35}}
+.nw p{color:#aab3c5;font-size:clamp(16px,1.4vw,20px);max-width:38ch;margin:0 0 28px}
+.nw .row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+.nw .bb{display:inline-flex;align-items:center;gap:10px;background:#ffe600;color:#07090f;font-weight:900;padding:17px 28px;border-radius:14px;text-decoration:none;font-size:16px;box-shadow:0 0 40px rgba(255,230,0,.35)}
+.nw .bb.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.4)}
+.nw .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:560px}.nw .svc div{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px;font-weight:800;font-size:14px}.nw .svc div span{display:block;font-size:22px;margin-bottom:4px}
+.nw .strip{position:absolute;left:0;right:0;bottom:0;background:#ffe600;color:#07090f;overflow:hidden;padding:12px 0;font-weight:900;text-transform:uppercase;font-size:clamp(16px,1.6vw,22px);letter-spacing:.02em}
+.nw .strip div{display:flex;width:max-content;animation:mq 22s linear infinite}.nw .strip span{padding:0 22px;white-space:nowrap}.nw .strip span::after{content:"⚡";margin-left:44px}
+.bolt{position:absolute;right:6%;top:18%;width:clamp(60px,7vw,110px);filter:drop-shadow(0 0 20px rgba(255,230,0,.8));animation:flick 3.4s infinite}
+.spark{position:absolute;width:4px;height:4px;border-radius:50%;background:#ffe600;box-shadow:0 0 10px #ffe600;opacity:0;animation:spark 3s infinite}
+@keyframes spark{0%{opacity:0;transform:translate(0,0)}10%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy))}}
+/* regler */
 .handle{position:absolute;top:0;bottom:0;left:var(--x);width:0;z-index:3;pointer-events:none}
-.handle::before{content:"";position:absolute;top:0;bottom:0;left:-1.5px;width:3px;background:var(--lime)}
-.handle::after{content:"⟷";position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--lime);color:#0f0f0e;font-size:26px;font-weight:800;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.handle::before{content:"";position:absolute;top:0;bottom:0;left:-2px;width:4px;background:var(--lime);box-shadow:0 0 24px rgba(212,255,58,.8)}
+.handle::after{content:"⟷";position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;background:var(--lime);color:#0f0f0e;font-size:28px;font-weight:800;display:grid;place-items:center;box-shadow:0 10px 40px rgba(0,0,0,.5)}
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
-.lbl{position:absolute;bottom:18px;z-index:2;font-size:13px;font-weight:800;padding:6px 12px;border-radius:999px;background:#0f0f0e;color:#fff}.lbl.a{left:18px}.lbl.b{right:18px;background:var(--lime);color:#0f0f0e}
-@media(max-width:700px){.new h3{font-size:30px}.new .cards{display:none}.new .nb{padding-top:22px;padding-right:18px}.new .nh{padding:16px 18px}.new p{font-size:15px}.old .banner{font-size:19px}.old td{font-size:13px}.handle::after{width:46px;height:46px}}
+.lbl{position:absolute;bottom:72px;z-index:5;font-size:13px;font-weight:800;padding:7px 14px;border-radius:999px;background:#0f0f0e;color:#fff;pointer-events:none;letter-spacing:.06em;text-transform:uppercase}.lbl.a{left:22px;background:#fff;color:#000}.lbl.b{right:22px;background:var(--lime);color:#0f0f0e}
+@media(max-width:900px){.nw{grid-template-columns:1fr}.nw .ph{position:absolute;inset:0;opacity:.35}.nw .chip,.bolt{display:none}.nw .tx{padding-top:90px}.nw .svc{grid-template-columns:1fr 1fr}.old .navc{display:none}.lbl{top:auto;bottom:70px}}
 /* STATS */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:70px}
 .stat{border-top:2px solid var(--ink);padding-top:18px}.stat b{display:block;font-size:clamp(56px,7vw,96px);letter-spacing:-.06em;line-height:1}.stat span{color:var(--ink-2)}
@@ -237,20 +268,32 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 <div class="kicker rv">Vorher / Nachher</div>
 <h2 class="rv d1">Von „Willkommen auf unserer Homepage“ zu „Jetzt anrufen“.</h2>
 <p class="sub rv d2">Ziehen Sie den Regler. So groß ist der Unterschied zwischen einer Website von damals und einer, die heute Kunden bringt.</p>
-<div class="ba rv d2" id="ba">
-<div class="pane old" aria-hidden="true">
-<div class="ttl">Elektro Kiez - Homepage - Microsoft Internet Explorer</div>
-<div class="banner">Willkommen auf unserer Homepage!!!</div>
-<table><tr><td class="navc"><b>Navigation</b><a href="#ba">Startseite</a><a href="#ba">Über uns</a><a href="#ba">Leistungen</a><a href="#ba">Gästebuch</a><a href="#ba">Links</a><a href="#ba">Impressum</a></td>
-<td><b>Herzlich Willkommen bei Elektro Kiez!</b><br><br>Wir sind ein Meisterbetrieb für Elektroinstallationen. Auf dieser Homepage finden Sie Informationen über unsere Firma. Bitte benutzen Sie die Navigation auf der linken Seite.<br><br><span class="blink">NEU!!</span> Jetzt auch Rauchmelder!<br><br>Sie sind Besucher Nr. <span class="count">004711</span><div class="uc">🚧 Diese Seite befindet sich im Aufbau 🚧<br>Optimiert für 800x600 und Internet Explorer 6</div></td></tr></table>
 </div>
-<div class="pane new" aria-hidden="true">
-<div class="nh" style="padding-left:max(32px,var(--x))"><b>Elektro Kiez</b><span>📞 030 000 000</span></div>
-<div class="nb"><h3>Strom da, <i>wo er fehlt.</i></h3><p>Meisterbetrieb für Elektroinstallation in Berlin. Heute anrufen, morgen vor Ort.</p><a class="call" href="#ba">Jetzt anrufen</a><div class="cards"><div>⚡ Notdienst 24/7</div><div>✓ Festpreise</div><div>★ Meisterbetrieb</div></div></div>
+<div class="ba rv" id="ba">
+<div class="pane old" aria-hidden="true"><div class="win">
+<div class="ttl">Elektro Kiez - Homepage - Microsoft Internet Explorer <span>_ □ ×</span></div>
+<div class="addr">Adresse <i>http://www.elektro-kiez.de/index2_neu_FINAL.html</i> Wechseln zu</div>
+<div class="body"><div class="banner">Willkommen auf unserer Homepage!!!</div>
+<div class="mq2"><span>+++ NEU!!! Jetzt auch Rauchmelder im Angebot +++ Betriebsferien vom 24.12. bis 02.01. +++ Besuchen Sie auch unser Gästebuch +++</span></div>
+<table><tr><td class="navc"><b>Navigation</b><a href="#ba">» Startseite</a><a href="#ba">» Über uns</a><a href="#ba">» Leistungen</a><a href="#ba">» Referenzen</a><a href="#ba">» Gästebuch</a><a href="#ba">» Links</a><a href="#ba">» Impressum</a></td>
+<td><b>Herzlich Willkommen bei Elektro Kiez!</b><br><br>Wir sind ein Meisterbetrieb für Elektroinstallationen. Auf dieser Homepage finden Sie Informationen über unsere Firma. Bitte benutzen Sie die Navigation auf der linken Seite.<br><br><span class="blink">NEU!!</span> Jetzt auch Rauchmelder!<br><br>Tel.: 030 / 000 00 0 (bitte auf AB sprechen)<br>Fax: 030 / 000 00 1<br><br>Sie sind Besucher Nr. <span class="count">004711</span><br><div class="uc"><b>🚧 Diese Seite befindet sich im Aufbau 🚧</b></div><div class="sm">Optimiert für 800x600 und Internet Explorer 6 · Letzte Aktualisierung: 14.03.2006</div></td></tr></table></div>
+</div></div>
+<div class="pane new" aria-hidden="true"><div class="nw">
+<div class="ph"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1400&q=72&auto=format&fit=crop" alt="" loading="lazy"><div class="chip c1"><i>★</i><div>Meisterbetrieb<small>seit 1998 im Kiez</small></div></div><div class="chip c2"><i>⏱</i><div>In 60 Min. vor Ort<small>Notdienst in ganz Berlin</small></div></div><div class="live"><b></b>Notdienst gerade aktiv</div></div>
+<div class="tx"><svg class="bolt" viewBox="0 0 64 96" aria-hidden="true"><path d="M38 0 6 54h22l-8 42 38-58H34z" fill="#ffe600"/></svg><i class="spark" style="left:62%;top:20%;--dx:40px;--dy:-60px;animation-delay:0s"></i><i class="spark" style="left:70%;top:28%;--dx:-30px;--dy:-80px;animation-delay:0.8s"></i><i class="spark" style="left:85%;top:15%;--dx:50px;--dy:40px;animation-delay:1.6s"></i><i class="spark" style="left:58%;top:60%;--dx:-40px;--dy:50px;animation-delay:2.2s"></i><i class="spark" style="left:90%;top:50%;--dx:-60px;--dy:-30px;animation-delay:1.1s"></i><i class="spark" style="left:75%;top:70%;--dx:30px;--dy:60px;animation-delay:0.4s"></i>
+<div class="top"><span class="logo2"><svg viewBox="0 0 64 96"><path d="M38 0 6 54h22l-8 42 38-58H34z" fill="#ffe600"/></svg>Elektro Kiez</span><span class="tel">📞 030 000 000</span></div>
+<div class="kk">⚡ Elektromeister in Berlin</div>
+<h3>Strom da,<br><i>wo er fehlt.</i></h3>
+<p>Installation, E-Check, Wallbox und Smart Home. Heute anrufen, morgen vor Ort – im Notfall in unter einer Stunde.</p>
+<div class="row"><a class="bb" href="#ba">⚡ Jetzt anrufen</a><a class="bb o" href="#ba">Termin anfragen</a></div>
+<div class="svc"><div><span>🔌</span>Installation</div><div><span>🚗</span>Wallbox</div><div><span>🏠</span>Smart Home</div><div><span>✅</span>E-Check</div><div><span>☀️</span>Photovoltaik</div><div><span>🚨</span>Notdienst 24/7</div></div>
 </div>
-<div class="handle"></div><span class="lbl a">Vorher</span><span class="lbl b">Nachher</span>
-<input type="range" min="0" max="100" value="50" aria-label="Vorher-Nachher-Regler" id="baRange">
+<div class="strip"><div><span>Festpreise</span><span>Meisterbetrieb</span><span>Notdienst 24/7</span><span>Wallbox</span><span>Smart Home</span><span>E-Check</span><span>Festpreise</span><span>Meisterbetrieb</span><span>Notdienst 24/7</span><span>Wallbox</span><span>Smart Home</span><span>E-Check</span></div></div>
+</div></div>
+<div class="handle"></div><span class="lbl a">Vorher · 2006</span><span class="lbl b">Nachher · Kiezmedia</span>
+<input type="range" min="0" max="100" value="40" aria-label="Vorher-Nachher-Regler" id="baRange">
 </div>
+<div class="wrap">
 <div class="stats">
 <div class="stat rv"><b><span data-count="5">0</span> Tage</b><span>von der Vorschau bis online</span></div>
 <div class="stat rv d1"><b><span data-count="48">0</span> h</b><span>bis Sie Ihre kostenlose Vorschau sehen</span></div>
@@ -396,7 +439,7 @@ const reveal=()=>{pending=pending.filter(el=>{if(el.getBoundingClientRect().top>
   return false})};
 addEventListener('scroll',reveal,{passive:true});addEventListener('resize',reveal);reveal();
 const ba=document.getElementById('ba'),rg=document.getElementById('baRange');rg.addEventListener('input',()=>ba.style.setProperty('--x',rg.value+'%'));
-let demo=true;const wig=()=>{if(demo&&ba.getBoundingClientRect().top<innerHeight*.5){demo=false;let t=0;const a=setInterval(()=>{t+=.05;const v=50+Math.sin(t)*22;ba.style.setProperty('--x',v+'%');rg.value=v;if(t>Math.PI*2){clearInterval(a);ba.style.setProperty('--x','50%');rg.value=50}},30)}};addEventListener('scroll',wig,{passive:true});
+let demo=true;const wig=()=>{if(demo&&ba.getBoundingClientRect().top<innerHeight*.5){demo=false;let t=0;const a=setInterval(()=>{t+=.05;const v=40+Math.sin(t)*25;ba.style.setProperty('--x',v+'%');rg.value=v;if(t>Math.PI*2){clearInterval(a);ba.style.setProperty('--x','40%');rg.value=40}},30)}};addEventListener('scroll',wig,{passive:true});
 document.querySelectorAll('[data-paket]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('paket').value=a.dataset.paket}));
 })();
 </script>
