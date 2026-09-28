@@ -129,7 +129,7 @@ h2{font-size:clamp(36px,5.6vw,70px);line-height:.98;letter-spacing:-.05em;margin
 .bahead{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,4vw,80px);align-items:end;padding:0 clamp(20px,3vw,48px) clamp(40px,4vw,60px);max-width:1680px;margin:0 auto}
 .bahead h2{max-width:17ch}.bahead .sub{margin-bottom:0}
 .bax .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:0}
-.bax .stat b{font-size:clamp(46px,5vw,84px)}.bax .stat span{font-size:15px}
+.bax .stat b{font-size:clamp(46px,5vw,84px)}.bax .stat>span{font-size:15px}.stat b span{font-size:inherit!important;color:inherit!important}
 .bax .ba{margin:0}
 .bax+.work{padding-top:clamp(90px,9vw,130px)}
 @media(max-width:1000px){.bahead{grid-template-columns:1fr}.bax .stats{grid-template-columns:repeat(3,1fr)}}
