@@ -124,6 +124,7 @@ h2{font-size:clamp(36px,5.6vw,70px);line-height:.98;letter-spacing:-.05em;margin
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
 .lbl{position:absolute;bottom:78px;z-index:5;font-size:clamp(15px,1.3vw,19px);font-weight:900;padding:13px 24px;border-radius:999px;pointer-events:none;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 14px 40px rgba(0,0,0,.55);border:3px solid #0f0f0e;display:flex;align-items:center;gap:10px}.lbl.a{left:24px;background:#fff;color:#0f0f0e}.lbl.b{right:24px;background:var(--lime);color:#0f0f0e}.lbl i{font-style:normal;font-size:1.2em}
 @media(max-width:900px){.nw{grid-template-columns:1fr}.nw .ph{position:absolute;inset:0;opacity:.35}.nw .chip,.bolt{display:none}.nw .tx{padding-top:90px}.nw .svc{grid-template-columns:1fr 1fr}.old .navc{display:none}.lbl{top:auto;bottom:70px}}
+.fmsg{margin:6px 0 0;font-size:15px;font-weight:600}.fmsg.err{color:#c62828;background:#fdecea;padding:12px 14px;border-radius:12px}.qf .fmsg.err{color:#ffb4a8;background:rgba(255,80,60,.12)}
 /* STATS */
 .bax{padding:110px 0 0}
 .bahead{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,4vw,80px);align-items:end;padding:0 clamp(20px,3vw,48px) clamp(40px,4vw,60px);max-width:1680px;margin:0 auto}
@@ -422,7 +423,7 @@ pv.addEventListener('click',e=>{if(e.target===pv||e.target.classList.contains('x
 const f=document.querySelector('.qf');if(!f)return;const st=[...f.querySelectorAll('.qs')],nx=document.getElementById('qnext'),bk=document.getElementById('qback');let i=0;
 const show=()=>{st.forEach((s,k)=>s.classList.toggle('on',k===i));document.getElementById('qn').textContent=`Frage ${i+1} von ${st.length}`;document.getElementById('qbar').style.width=((i+1)/st.length*100)+'%';bk.style.visibility=i?'visible':'hidden';nx.textContent=i===st.length-1?'Fragebogen absenden':'Weiter';const q=st[i].querySelector('input:not([type=checkbox]),textarea');q&&q.focus({preventScroll:true})};
 const valid=()=>{for(const el of st[i].querySelectorAll('[required]')){if(!el.checkValidity()){el.reportValidity();return false}}return true};
-nx.addEventListener('click',()=>{if(!valid())return;if(i<st.length-1){i++;show()}else{f.submit()}});bk.addEventListener('click',()=>{if(i>0){i--;show()}});
+nx.addEventListener('click',()=>{if(!valid())return;if(i<st.length-1){i++;show()}else{f._send?f._send():f.submit()}});bk.addEventListener('click',()=>{if(i>0){i--;show()}});
 f.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'){e.preventDefault();nx.click()}});
 })();
 </script>
@@ -446,6 +447,20 @@ const ba=document.getElementById('ba'),rg=document.getElementById('baRange');rg.
 let demo=true;const wig=()=>{if(demo&&ba.getBoundingClientRect().top<innerHeight*.5){demo=false;let t=0;const a=setInterval(()=>{t+=.05;const v=40+Math.sin(t)*25;ba.style.setProperty('--x',v+'%');rg.value=v;if(t>Math.PI*2){clearInterval(a);ba.style.setProperty('--x','40%');rg.value=40}},30)}};addEventListener('scroll',wig,{passive:true});
 document.querySelectorAll('[data-paket]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('paket').value=a.dataset.paket}));
 })();
+</script>
+<script>
+/* Formulare per fetch an Web3Forms – zeigt Erfolg oder die genaue Fehlermeldung an */
+(()=>{document.querySelectorAll('form[action="https://api.web3forms.com/submit"]').forEach(f=>{
+  const out=document.createElement('p');out.className='fmsg';out.setAttribute('role','status');f.appendChild(out);
+  const send=async()=>{const b=f.querySelector('#qnext')||f.querySelector('button[type=submit]');const t=b.textContent;b.disabled=true;b.textContent='Wird gesendet …';out.textContent='';out.className='fmsg';
+    const fd=new FormData(f);fd.delete('redirect');
+    try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:fd});const d=await r.json();
+      if(r.ok&&d.success){location.href='danke.html';return}
+      out.textContent='Senden fehlgeschlagen: '+(d.message||r.status)+' – bitte schreiben Sie uns direkt an hallokiezmedia@gmail.com.';out.className='fmsg err'}
+    catch(e){out.textContent='Keine Verbindung zum Server. Bitte versuchen Sie es erneut oder schreiben Sie an hallokiezmedia@gmail.com.';out.className='fmsg err'}
+    b.disabled=false;b.textContent=t};
+  f.addEventListener('submit',e=>{e.preventDefault();send()});f._send=send;
+})})();
 </script>
 </body>
 </html>
