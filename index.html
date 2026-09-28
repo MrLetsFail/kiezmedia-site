@@ -125,7 +125,34 @@ h2{font-size:clamp(36px,5.6vw,70px);line-height:.98;letter-spacing:-.05em;margin
 .mrow{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-top:8px;color:#3a3f1c}
 @media(max-width:900px){.bento{grid-template-columns:1fr}.tile.w2{grid-column:auto}}
 /* PRICING */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+.plan.xl{background:linear-gradient(160deg,var(--card),color-mix(in srgb,var(--lime) 18%,var(--card)));border-style:dashed;border-color:var(--ink-2)}
+.price .pages{font-size:22px;letter-spacing:0;font-weight:700;color:var(--ink-2)}
+@media(max-width:1200px){.plans{grid-template-columns:repeat(2,1fr)}}
+.ex-btns{display:flex;gap:10px;flex-wrap:wrap}.work .btn.ghost{color:var(--on-dark)!important}
+.mob-btn{font:inherit;font-weight:700;font-size:16px}@media(max-width:900px){.mob-btn{display:none}}
+.pv{position:fixed;inset:0;z-index:200;background:rgba(10,10,9,.82);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;gap:40px;padding:20px}
+.pv.open{display:flex;animation:pvin .35s var(--ease)}@keyframes pvin{from{opacity:0}}
+.pv .dev{width:390px;height:min(844px,88vh);border-radius:54px;background:#111;padding:14px;box-shadow:0 0 0 2px #333,0 60px 120px rgba(0,0,0,.6);position:relative;animation:pvup .5s var(--ease)}@keyframes pvup{from{transform:translateY(40px) scale(.96)}}
+.pv .dev::before{content:"";position:absolute;top:24px;left:50%;transform:translateX(-50%);width:110px;height:30px;border-radius:20px;background:#000;z-index:2}
+.pv iframe{width:100%;height:100%;border:0;border-radius:42px;background:#fff}
+.pv .side{color:var(--on-dark);max-width:300px}.pv .side h3{font-size:34px;letter-spacing:-.04em;margin:0 0 8px;line-height:1}.pv .side p{color:var(--mut-dark);margin:0 0 22px}
+.pv .x{position:absolute;top:22px;right:26px;width:48px;height:48px;border-radius:50%;border:0;background:var(--lime);color:#0f0f0e;font-size:24px;font-weight:800;cursor:pointer}
+@media(max-width:800px){.pv .side{display:none}}
+/* Fragebogen */
+.qb{margin-top:60px;border-radius:var(--r);background:var(--dark);color:var(--on-dark);overflow:hidden}
+.qb>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:34px clamp(24px,4vw,48px);font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.03em}
+.qb>summary::-webkit-details-marker{display:none}.qb>summary small{display:block;font-size:16px;font-weight:500;color:var(--mut-dark);letter-spacing:0;margin-top:6px}
+.qb>summary::after{content:"+";flex:none;width:52px;height:52px;border-radius:50%;background:var(--lime);color:#0f0f0e;display:grid;place-items:center;font-size:28px;transition:transform .3s var(--ease)}.qb[open]>summary::after{transform:rotate(45deg)}
+.qf{padding:0 clamp(24px,4vw,48px) 44px;background:none;border:0;box-shadow:none}
+.qprog{display:flex;align-items:center;gap:14px;margin-bottom:26px;font-weight:700;color:var(--mut-dark);font-size:14px}.qprog .tr{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden}.qprog .tr i{display:block;height:100%;width:10%;background:var(--lime);transition:width .5s var(--ease)}
+.qs{display:none;gap:14px;animation:qin .45s var(--ease)}.qs.on{display:grid}@keyframes qin{from{opacity:0;transform:translateX(30px)}}
+.qs h4{font-size:clamp(24px,2.6vw,36px);letter-spacing:-.04em;margin:0;line-height:1.1}.qs .hint2{color:var(--mut-dark);margin:0 0 6px}
+.qf label{color:var(--on-dark)}.qf input,.qf textarea,.qf select{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:var(--on-dark)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chips label{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);cursor:pointer;font-weight:600}.chips input{width:auto;accent-color:var(--lime)}
+.chips label:has(input:checked){background:var(--lime);color:#0f0f0e;border-color:var(--lime)}
+.qnav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}.qnav .btn.ghost{color:var(--on-dark)!important}
+
 .plan{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(30px,2.6vw,46px);display:flex;flex-direction:column;transition:transform .35s var(--ease)}
 .plan:hover{transform:translateY(-6px)}
 .plan.hot{background:var(--dark);color:var(--on-dark);border:0;box-shadow:0 40px 80px -30px rgba(0,0,0,.55);position:relative;overflow:hidden}
@@ -237,13 +264,13 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 <p class="sub rv d2">Jede Beispielseite zeigt, was im jeweiligen Paket steckt. Fahren Sie mit der Maus über die Bildschirme – oder klicken Sie sich durch.</p>
 <div class="proj">
 <a class="stage rv" href="beispiele/salon-mira/"><div class="laptop"><div class="scr" style="background-image:url(img/salon-mira-desk.webp)"></div></div><div class="phone"><img src="img/salon-mira-mob.webp" alt="" loading="lazy"></div></a>
-<div class="rv d1"><span class="tag ">249 € · 1 Seite</span><h3>Simple-Bundle</h3><p class="ex-name">Beispiel: <b>Salon Mira</b></p><p>Friseursalon in Prenzlauer Berg. Ein eleganter Onepager mit Preisliste, Team, Galerie und Online-Terminbuchung – alles auf einer Seite.</p><ul><li>Onepager</li><li>Preisliste</li><li>Team &amp; Galerie</li><li>Termin-Button</li></ul><a class="btn lime arrow" href="beispiele/salon-mira/">Salon Mira ansehen</a></div>
+<div class="rv d1"><span class="tag ">249 € · 1 Seite</span><h3>Simple-Bundle</h3><p class="ex-name">Beispiel: <b>Salon Mira</b></p><p>Friseursalon in Prenzlauer Berg. Ein eleganter Onepager mit Preisliste, Team, Galerie und Online-Terminbuchung – alles auf einer Seite.</p><ul><li>Onepager</li><li>Preisliste</li><li>Team &amp; Galerie</li><li>Termin-Button</li></ul><div class="ex-btns"><a class="btn lime arrow" href="beispiele/salon-mira/">Salon Mira ansehen</a><a class="btn ghost" href="#anfrage" data-paket="Simple">Simple-Bundle anfragen</a><button class="btn ghost mob-btn" type="button" data-mobile="beispiele/salon-mira/" data-name="Salon Mira">📱 Mobil ansehen</button></div></div>
 </div><div class="proj">
 <a class="stage rv" href="beispiele/spurwechsel/"><div class="laptop"><div class="scr" style="background-image:url(img/spurwechsel-desk.webp)"></div></div><div class="phone"><img src="img/spurwechsel-mob.webp" alt="" loading="lazy"></div></a>
-<div class="rv d1"><span class="tag m">490 € · 3 Seiten</span><h3>Medium-Bundle</h3><p class="ex-name">Beispiel: <b>Fahrschule Spurwechsel</b></p><p>Fahrschule mit zwei Standorten. Startseite, Klassen &amp; Preise und Termine mit Anmeldung – mit Scroll-Fortschritt als Fahrbahn.</p><ul><li>3 Seiten</li><li>Klassen &amp; Preise</li><li>Kurstermine</li><li>Anmeldeformular</li></ul><a class="btn lime arrow" href="beispiele/spurwechsel/">Fahrschule Spurwechsel ansehen</a></div>
+<div class="rv d1"><span class="tag m">490 € · 3 Seiten</span><h3>Medium-Bundle</h3><p class="ex-name">Beispiel: <b>Fahrschule Spurwechsel</b></p><p>Fahrschule mit zwei Standorten. Startseite, Klassen &amp; Preise und Termine mit Anmeldung – mit Scroll-Fortschritt als Fahrbahn.</p><ul><li>3 Seiten</li><li>Klassen &amp; Preise</li><li>Kurstermine</li><li>Anmeldeformular</li></ul><div class="ex-btns"><a class="btn lime arrow" href="beispiele/spurwechsel/">Fahrschule Spurwechsel ansehen</a><a class="btn ghost" href="#anfrage" data-paket="Medium">Medium-Bundle anfragen</a><button class="btn ghost mob-btn" type="button" data-mobile="beispiele/spurwechsel/" data-name="Fahrschule Spurwechsel">📱 Mobil ansehen</button></div></div>
 </div><div class="proj">
 <a class="stage rv" href="beispiele/kiezburger/"><div class="laptop"><div class="scr" style="background-image:url(img/kiezburger-desk.webp)"></div></div><div class="phone"><img src="img/kiezburger-mob.webp" alt="" loading="lazy"></div></a>
-<div class="rv d1"><span class="tag p">990 € · 5 Seiten</span><h3>Premium-Bundle</h3><p class="ex-name">Beispiel: <b>Kiezburger</b></p><p>Burgerladen mit zwei Filialen. Fünf Seiten voller Effekte: Parallax, horizontale Burger-Galerie, Sticky-Story, Live-Öffnungsstatus und eine Karte mit Bildvorschau.</p><ul><li>5 Seiten</li><li>Individuelles Design</li><li>Animationen</li><li>Catering-Anfrage</li></ul><a class="btn lime arrow" href="beispiele/kiezburger/">Kiezburger ansehen</a></div>
+<div class="rv d1"><span class="tag p">990 € · 5 Seiten</span><h3>Premium-Bundle</h3><p class="ex-name">Beispiel: <b>Kiezburger</b></p><p>Burgerladen mit zwei Filialen. Fünf Seiten voller Effekte: Parallax, horizontale Burger-Galerie, Sticky-Story, Live-Öffnungsstatus und eine Karte mit Bildvorschau.</p><ul><li>5 Seiten</li><li>Individuelles Design</li><li>Animationen</li><li>Catering-Anfrage</li></ul><div class="ex-btns"><a class="btn lime arrow" href="beispiele/kiezburger/">Kiezburger ansehen</a><a class="btn ghost" href="#anfrage" data-paket="Premium">Premium-Bundle anfragen</a><button class="btn ghost mob-btn" type="button" data-mobile="beispiele/kiezburger/" data-name="Kiezburger">📱 Mobil ansehen</button></div></div>
 </div>
 </div></section>
 
@@ -275,6 +302,10 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 <div class="price">990 €<s>1.490 €</s></div><div class="once">einmalig · Einführungspreis</div>
 <ul><li>Alles aus Medium</li><li>Bis zu 5 Seiten, individuelles Design</li><li>Texte schreiben wir für Sie</li><li>Animationen &amp; Effekte</li><li>Fotos vor Ort (Berlin)</li><li>Google-Unternehmensprofil eingerichtet</li><li>3 Monate Pflege inklusive</li></ul>
 <a class="btn" href="#anfrage" data-paket="Premium">Premium anfragen</a><a class="demo" href="beispiele/kiezburger/">Beispiel: Kiezburger</a></div>
+<div class="plan xl rv d3"><h3>Individuell</h3><p class="for">Für große Auftritte mit mehr als 5 Seiten.</p>
+<div class="price">5+ <small class="pages">Seiten</small></div><div class="once">Preis auf Anfrage · fair kalkuliert</div>
+<ul><li>Alles aus Premium</li><li>Beliebig viele Seiten</li><li>Shop, Buchungssystem oder Mehrsprachigkeit</li><li>Anbindung an Ihre Tools</li><li>Persönliche Beratung vor Ort</li><li>Pflege nach Absprache</li></ul>
+<a class="btn" href="#anfrage" data-paket="Individuell (5+ Seiten)">Kontakt aufnehmen</a><a class="demo" href="#anfrage">Wir melden uns innerhalb von 24 h</a></div>
 </div>
 <div class="addon rv"><div><strong>Pflege &amp; Hosting · 19 € / Monat</strong><br><span class="small">Hosting, SSL, Updates und kleine Änderungen inklusive. Optional und monatlich kündbar.</span></div><a class="btn ghost sm" href="#anfrage">Mit anfragen</a></div>
 <p class="small center" style="margin-top:18px">Alle Preise zzgl. Domain (gehört Ihnen). Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
@@ -307,7 +338,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 </div></section>
 
 <section id="anfrage" style="padding-top:0"><div class="wrap contact">
-<div class="rv"><div class="kicker">Kontakt</div><h2>Lassen Sie uns loslegen.</h2><p class="sub" style="margin-bottom:0">Sagen Sie uns, um welchen Betrieb es geht. Wir melden uns innerhalb von 24 Stunden mit Ihrer kostenlosen Vorschau.</p>
+<div class="rv"><div class="kicker">Kontakt</div><h2>Lassen Sie uns loslegen.</h2><p class="sub" style="margin-bottom:0">Sagen Sie uns, um welchen Betrieb es geht. Wir melden uns innerhalb von 24 Stunden mit Ihrer kostenlosen Vorschau.</p><p class="small" style="margin-top:14px">Noch keine Website? <a href="#fragebogen" onclick="document.getElementById('fragebogen').open=true">Zum Fragebogen ↓</a></p>
 <ul><li><span class="ico">@</span><a href="mailto:hallokiezmedia@gmail.com">hallokiezmedia@gmail.com</a></li><li><span class="ico">⌂</span>Berlin</li></ul></div>
 <form class="rv d1" action="https://formsubmit.co/hallokiezmedia@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="Neue Anfrage über kiezmedia">
@@ -317,16 +348,37 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 <div class="row2"><label>Name<input name="name" required autocomplete="name"></label><label>Betrieb<input name="betrieb" required autocomplete="organization"></label></div>
 <div class="row2"><label>E-Mail<input name="email" type="email" required autocomplete="email"></label><label>Telefon<input name="telefon" type="tel" autocomplete="tel"></label></div>
 <label>Aktuelle Website (falls vorhanden)<input name="website" placeholder="www.ihr-betrieb.de"></label>
-<label>Paket<select name="paket" id="paket"><option>Weiß ich noch nicht</option><option>Simple</option><option>Medium</option><option>Premium</option></select></label>
+<label>Paket<select name="paket" id="paket"><option>Weiß ich noch nicht</option><option>Simple</option><option>Medium</option><option>Premium</option><option>Individuell (5+ Seiten)</option></select></label>
 <label>Nachricht<textarea name="nachricht" placeholder="Was ist Ihnen wichtig? Wann dürfen wir anrufen?"></textarea></label>
 <label class="check"><input type="checkbox" required> Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage genutzt werden (siehe <a href="datenschutz.html">Datenschutz</a>).</label>
 <button class="btn lime arrow" type="submit">Kostenlose Vorschau anfordern</button>
 </form>
-</div></section>
+</div>
+<div class="wrap"><details class="qb rv" id="fragebogen"><summary><span>Noch keine Website? Füllen Sie unseren Fragebogen aus.<small>10 kurze Fragen, ca. 5 Minuten – danach haben wir alles, um Ihre Seite zu bauen.</small></span></summary>
+<form class="qf" action="https://formsubmit.co/hallokiezmedia@gmail.com" method="POST" novalidate>
+<input type="hidden" name="_subject" value="Neuer Fragebogen über kiezmedia"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://mrletsfail.github.io/kiezmedia-site/danke.html"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<div class="qprog"><span id="qn">Frage 1 von 10</span><div class="tr"><i id="qbar"></i></div></div>
+<div class="qs on" data-step="1"><h4>Wie heißt Ihr Betrieb?</h4><p class="hint2">Und in welcher Branche sind Sie tätig?</p><div class="row2"><label>Name des Betriebs<input name="betrieb" required></label><label>Branche<input name="branche" placeholder="z. B. Friseur, Elektriker, Café" required></label></div></div><div class="qs" data-step="2"><h4>Wer ist Ihr Ansprechpartner?</h4><p class="hint2">Damit wir Ihnen die Vorschau schicken können.</p><label>Name<input name="name" required autocomplete="name"></label><div class="row2"><label>E-Mail<input name="email" type="email" required autocomplete="email"></label><label>Telefon<input name="telefon" type="tel" autocomplete="tel"></label></div></div><div class="qs" data-step="3"><h4>Wo finden Kunden Sie?</h4><p class="hint2">Adresse und in welchem Gebiet Sie arbeiten.</p><label>Adresse<input name="adresse" placeholder="Straße, PLZ, Ort"></label><label>Einzugsgebiet<input name="einzugsgebiet" placeholder="z. B. ganz Berlin, nur Neukölln, auch Brandenburg"></label></div><div class="qs" data-step="4"><h4>Wann haben Sie geöffnet?</h4><p class="hint2">Oder wann sind Sie erreichbar?</p><label>Öffnungszeiten<textarea name="oeffnungszeiten" placeholder="Mo–Fr 9–18 Uhr, Sa 10–14 Uhr …"></textarea></label></div><div class="qs" data-step="5"><h4>Was bieten Sie an?</h4><p class="hint2">Ihre wichtigsten Leistungen oder Produkte – gern mit Preisen.</p><label>Leistungen &amp; Preise<textarea name="leistungen" placeholder="Herrenschnitt ab 25 €, Färben ab 55 € …" required></textarea></label></div><div class="qs" data-step="6"><h4>Was macht Sie besonders?</h4><p class="hint2">Warum sollten Kunden zu Ihnen kommen und nicht zur Konkurrenz?</p><label>Ihre Stärken<textarea name="besonderheiten" placeholder="Familienbetrieb seit 1998, Termine auch abends, Meisterbetrieb …"></textarea></label></div><div class="qs" data-step="7"><h4>Wer sind Ihre Kunden?</h4><p class="hint2">Hilft uns bei Ton, Bildern und Texten.</p><div class="chips"><label><input type="checkbox" name="zielgruppe[]" value="Privatkunden">Privatkunden</label><label><input type="checkbox" name="zielgruppe[]" value="Firmenkunden">Firmenkunden</label><label><input type="checkbox" name="zielgruppe[]" value="Junge Leute">Junge Leute</label><label><input type="checkbox" name="zielgruppe[]" value="Familien">Familien</label><label><input type="checkbox" name="zielgruppe[]" value="Senioren">Senioren</label><label><input type="checkbox" name="zielgruppe[]" value="Laufkundschaft">Laufkundschaft</label><label><input type="checkbox" name="zielgruppe[]" value="Stammkunden">Stammkunden</label></div><label>Sonst noch?<input name="zielgruppe_frei"></label></div><div class="qs" data-step="8"><h4>Was sollen Besucher tun?</h4><p class="hint2">Mehrfachauswahl möglich.</p><div class="chips"><label><input type="checkbox" name="ziel[]" value="Anrufen">Anrufen</label><label><input type="checkbox" name="ziel[]" value="WhatsApp schreiben">WhatsApp schreiben</label><label><input type="checkbox" name="ziel[]" value="Termin online buchen">Termin online buchen</label><label><input type="checkbox" name="ziel[]" value="Anfrage senden">Anfrage senden</label><label><input type="checkbox" name="ziel[]" value="Online bestellen">Online bestellen</label><label><input type="checkbox" name="ziel[]" value="Vorbeikommen">Vorbeikommen</label><label><input type="checkbox" name="ziel[]" value="Preise ansehen">Preise ansehen</label></div><label>Online-Buchung oder Bestellung schon vorhanden? (Link)<input name="buchungslink" placeholder="z. B. Treatwell, Lieferando, Calendly"></label></div><div class="qs" data-step="9"><h4>Was haben Sie schon?</h4><p class="hint2">Kein Problem, wenn noch nichts da ist.</p><div class="chips"><label><input type="checkbox" name="material[]" value="Logo">Logo</label><label><input type="checkbox" name="material[]" value="Eigene Fotos">Eigene Fotos</label><label><input type="checkbox" name="material[]" value="Feste Farben">Feste Farben</label><label><input type="checkbox" name="material[]" value="Domain (z. B. ihr-name.de)">Domain (z. B. ihr-name.de)</label><label><input type="checkbox" name="material[]" value="Instagram">Instagram</label><label><input type="checkbox" name="material[]" value="Facebook">Facebook</label><label><input type="checkbox" name="material[]" value="Google-Eintrag">Google-Eintrag</label></div><label>Links zu Social Media / Google-Eintrag<input name="links"></label><label>Wunschdomain<input name="domain" placeholder="www.ihr-betrieb.de"></label></div><div class="qs" data-step="10"><h4>Fast geschafft!</h4><p class="hint2">Geschmack, Paket und Zeitrahmen.</p><label>Websites, die Ihnen gefallen (optional)<input name="vorbilder" placeholder="Links oder Beschreibung"></label><div class="row2"><label>Paket<select name="paket"><option>Weiß ich noch nicht</option><option>Simple</option><option>Medium</option><option>Premium</option><option>Individuell (5+ Seiten)</option></select></label><label>Wann soll die Seite online sein?<select name="zeitrahmen"><option>So schnell wie möglich</option><option>In 2–4 Wochen</option><option>In 1–3 Monaten</option><option>Noch offen</option></select></label></div><label>Sonst noch etwas?<textarea name="sonstiges"></textarea></label><label class="check"><input type="checkbox" required> Ich bin einverstanden, dass meine Angaben zur Erstellung meiner Website genutzt werden (siehe <a href="datenschutz.html">Datenschutz</a>).</label></div>
+<div class="qnav"><button class="btn ghost" type="button" id="qback" style="visibility:hidden">← Zurück</button><button class="btn lime arrow" type="button" id="qnext">Weiter</button></div>
+</form></details></div>
+</section>
 </main>
 
 <footer><div class="wrap"><div class="big">Kiez<i>media</i>.</div><div class="row"><span>© 2026 Kiezmedia GbR · Berlin</span><span><a href="#anfrage">Kontakt</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span></div></div></footer>
 
+<div class="pv" id="pv" role="dialog" aria-modal="true" aria-label="Mobile Vorschau"><button class="x" type="button" aria-label="Schließen">×</button><div class="dev"><iframe title="Mobile Vorschau" loading="lazy"></iframe></div><div class="side"><h3 id="pvname">Mobil</h3><p>So sieht die Seite auf dem Smartphone aus. Scrollen Sie im Handy – alle Effekte funktionieren.</p><a class="btn lime arrow" id="pvopen" href="#">Im Browser öffnen</a></div></div>
+<script>
+(()=>{const pv=document.getElementById('pv'),fr=pv.querySelector('iframe');
+const close=()=>{pv.classList.remove('open');fr.src='about:blank';document.body.style.overflow=''};
+document.querySelectorAll('[data-mobile]').forEach(b=>b.addEventListener('click',()=>{fr.src=b.dataset.mobile;document.getElementById('pvname').textContent=b.dataset.name;document.getElementById('pvopen').href=b.dataset.mobile;pv.classList.add('open');document.body.style.overflow='hidden'}));
+pv.addEventListener('click',e=>{if(e.target===pv||e.target.classList.contains('x'))close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+const f=document.querySelector('.qf');if(!f)return;const st=[...f.querySelectorAll('.qs')],nx=document.getElementById('qnext'),bk=document.getElementById('qback');let i=0;
+const show=()=>{st.forEach((s,k)=>s.classList.toggle('on',k===i));document.getElementById('qn').textContent=`Frage ${i+1} von ${st.length}`;document.getElementById('qbar').style.width=((i+1)/st.length*100)+'%';bk.style.visibility=i?'visible':'hidden';nx.textContent=i===st.length-1?'Fragebogen absenden':'Weiter';const q=st[i].querySelector('input:not([type=checkbox]),textarea');q&&q.focus({preventScroll:true})};
+const valid=()=>{for(const el of st[i].querySelectorAll('[required]')){if(!el.checkValidity()){el.reportValidity();return false}}return true};
+nx.addEventListener('click',()=>{if(!valid())return;if(i<st.length-1){i++;show()}else{f.submit()}});bk.addEventListener('click',()=>{if(i>0){i--;show()}});
+f.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'){e.preventDefault();nx.click()}});
+})();
+</script>
 <script>
 (()=>{
 const nav=document.getElementById('nav'),hero=document.getElementById('hero'),phones=document.getElementById('phones'),steps=document.getElementById('steps');
