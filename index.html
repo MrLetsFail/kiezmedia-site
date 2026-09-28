@@ -7,14 +7,14 @@
 <meta name="description" content="Kiezmedia baut Websites für Handwerk, Gastro, Salons und Praxen in Berlin: mobil, schnell, zum Festpreis ab 249 €. Kostenlose Vorschau – erst sehen, dann zahlen.">
 <meta property="og:title" content="Kiezmedia – Websites, über die der Kiez spricht">
 <meta property="og:description" content="Festpreis ab 249 €, online in 5 Tagen, kostenlose Vorschau.">
-<meta property="og:image" content="https://mrletsfail.github.io/kiezmedia-site/img/smash-kiez-desk.webp">
+<meta property="og:image" content="https://mrletsfail.github.io/kiezmedia-site/img/kiezburger-desk.webp">
 <meta name="theme-color" content="#0b0b0a">
 <style>
 :root{--bg:#f6f4ef;--card:#fff;--ink:#0f0f0e;--ink-2:#5a5852;--line:#e3dfd4;--lime:#d4ff3a;--dark:#0b0b0a;--on-dark:#f3f1ea;--mut-dark:#9c998f;--r:22px;--max:1200px;--ease:cubic-bezier(.2,.8,.2,1)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font:17px/1.6 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}.wrap.wide{max-width:1680px;padding:0 clamp(20px,3vw,48px)}
 /* NAV */
 .nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,color .3s,box-shadow .3s;color:var(--on-dark)}
 .nav.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
@@ -99,18 +99,18 @@ h2{font-size:clamp(36px,5.6vw,70px);line-height:.98;letter-spacing:-.05em;margin
 @media(max-width:700px){.stats{grid-template-columns:1fr}}
 /* WORK */
 .work{background:var(--dark);color:var(--on-dark)}.work .kicker{color:var(--mut-dark)}.work .kicker::before{box-shadow:0 0 0 2px var(--on-dark)}.work .sub{color:var(--mut-dark)}
-.proj{display:grid;grid-template-columns:1.35fr 1fr;gap:60px;align-items:center;margin-bottom:120px}.proj:last-child{margin-bottom:0}
+.proj{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(40px,5vw,90px);align-items:center;margin-bottom:120px}.proj:last-child{margin-bottom:0}
 .proj:nth-child(even) .stage{order:2}
 .stage{position:relative;padding-bottom:40px}
 .laptop{border-radius:18px;background:#1c1c1a;padding:12px 12px 0;box-shadow:0 0 0 1.5px #2e2e2b,0 60px 90px -40px rgba(0,0,0,.9)}
-.laptop .scr{height:clamp(240px,28vw,380px);border-radius:8px 8px 0 0;overflow:hidden;background-size:100% auto;background-position:top center;background-repeat:no-repeat;transition:background-position 5s ease-in-out}
+.laptop .scr{height:clamp(240px,30vw,520px);border-radius:8px 8px 0 0;overflow:hidden;background-size:100% auto;background-position:top center;background-repeat:no-repeat;transition:background-position 5s ease-in-out}
 .proj:hover .laptop .scr{background-position:bottom center}
 .laptop::after{content:"";display:block;height:16px;margin:0 -30px;background:linear-gradient(#2e2e2b,#161614);border-radius:0 0 18px 18px}
-.stage .phone{position:absolute;left:auto;right:-14px;bottom:0;width:clamp(120px,13vw,170px);border-radius:28px;padding:6px;transform:none!important}
+.stage .phone{position:absolute;left:auto;right:-14px;bottom:0;width:clamp(120px,12vw,210px);border-radius:28px;padding:6px;transform:none!important}
 .stage .phone::before{top:11px;height:14px}.stage .phone img{border-radius:22px}
 .proj:nth-child(even) .stage .phone{right:auto;left:-14px}
 .proj .tag{display:inline-block;font-size:13px;font-weight:800;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.1);margin-bottom:18px}.proj .tag.m{background:var(--lime);color:#0f0f0e}.proj .tag.p{background:#fff;color:#0f0f0e}
-.proj h3{font-size:clamp(34px,4.4vw,56px);letter-spacing:-.05em;line-height:1;margin:0 0 14px}
+.proj h3{font-size:clamp(44px,5.6vw,84px);letter-spacing:-.055em;line-height:.95;margin:0 0 10px}.proj .ex-name{font-size:clamp(18px,1.6vw,22px);color:var(--on-dark)!important;margin:0 0 16px!important}.proj .ex-name b{color:var(--lime)}
 .proj p{color:var(--mut-dark);margin:0 0 22px;max-width:40ch}
 .proj ul{list-style:none;padding:0;margin:0 0 30px;display:flex;flex-wrap:wrap;gap:8px}.proj li{font-size:14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 12px}
 @media(max-width:900px){.proj{grid-template-columns:1fr;gap:40px}.proj:nth-child(even) .stage{order:0}}
@@ -126,7 +126,7 @@ h2{font-size:clamp(36px,5.6vw,70px);line-height:.98;letter-spacing:-.05em;margin
 @media(max-width:900px){.bento{grid-template-columns:1fr}.tile.w2{grid-column:auto}}
 /* PRICING */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-.plan{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px;display:flex;flex-direction:column;transition:transform .35s var(--ease)}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(30px,2.6vw,46px);display:flex;flex-direction:column;transition:transform .35s var(--ease)}
 .plan:hover{transform:translateY(-6px)}
 .plan.hot{background:var(--dark);color:var(--on-dark);border:0;box-shadow:0 40px 80px -30px rgba(0,0,0,.55);position:relative;overflow:hidden}
 .plan.hot::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(212,255,58,.25),transparent 70%);top:-120px;right:-120px}
@@ -196,8 +196,8 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 </div>
 <div class="phones" id="phones">
 <div class="phone l"><img src="img/salon-mira-mob.webp" alt="Beispielseite Friseursalon auf dem Handy" width="500" height="1080"></div>
-<div class="phone c"><img src="img/smash-kiez-mob.webp" alt="Beispielseite Burgerladen auf dem Handy" width="500" height="1080"></div>
-<div class="phone r"><img src="img/fahrschule-spurwechsel-mob.webp" alt="Beispielseite Fahrschule auf dem Handy" width="500" height="1080"></div>
+<div class="phone c"><img src="img/kiezburger-mob.webp" alt="Beispielseite Burgerladen auf dem Handy" width="500" height="1080"></div>
+<div class="phone r"><img src="img/spurwechsel-mob.webp" alt="Beispielseite Fahrschule auf dem Handy" width="500" height="1080"></div>
 <span class="tagfloat t1">📞 1 Tipp zum Anruf</span><span class="tagfloat t2">⚡ lädt in &lt; 1 s</span>
 </div>
 </div>
@@ -231,21 +231,19 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 </div>
 </div></section>
 
-<section class="work" id="arbeiten"><div class="wrap">
+<section class="work" id="arbeiten"><div class="wrap wide">
 <div class="kicker rv">Beispiele</div>
-<h2 class="rv d1">Eine Seite pro Paket. Klicken Sie rein.</h2>
-<p class="sub rv d2">Fahren Sie mit der Maus über die Bildschirme, dann scrollt die Seite. Oder öffnen Sie sie gleich auf dem Handy.</p>
-<div class="proj">
-<a class="stage rv" href="beispiele/smash-kiez/"><div class="laptop"><div class="scr" style="background-image:url(img/smash-kiez-desk.webp)"></div></div><div class="phone"><img src="img/smash-kiez-mob.webp" alt="" loading="lazy"></div></a>
-<div class="rv d1"><span class="tag">Simple · 249 €</span><h3>Smash Kiez</h3><p>Burgerladen in Neukölln. Ein kräftiger Onepager, der Hunger macht: Karte, Öffnungszeiten und ein Bestell-Button, der immer sichtbar ist.</p><ul><li>Onepager</li><li>Speisekarte</li><li>Bestell-Button</li><li>Mobile first</li></ul><a class="btn lime arrow" href="beispiele/smash-kiez/">Seite ansehen</a></div>
-</div>
+<h2 class="rv d1">Drei Bundles. Drei echte Websites.</h2>
+<p class="sub rv d2">Jede Beispielseite zeigt, was im jeweiligen Paket steckt. Fahren Sie mit der Maus über die Bildschirme – oder klicken Sie sich durch.</p>
 <div class="proj">
 <a class="stage rv" href="beispiele/salon-mira/"><div class="laptop"><div class="scr" style="background-image:url(img/salon-mira-desk.webp)"></div></div><div class="phone"><img src="img/salon-mira-mob.webp" alt="" loading="lazy"></div></a>
-<div class="rv d1"><span class="tag m">Medium · 490 €</span><h3>Salon Mira</h3><p>Friseursalon in Prenzlauer Berg. Elegant, ruhig, mit Preisliste, Team, Galerie und Online-Terminbuchung.</p><ul><li>Preisliste</li><li>Team</li><li>Galerie</li><li>Terminbuchung</li></ul><a class="btn lime arrow" href="beispiele/salon-mira/">Seite ansehen</a></div>
-</div>
-<div class="proj">
-<a class="stage rv" href="beispiele/fahrschule-spurwechsel/"><div class="laptop"><div class="scr" style="background-image:url(img/fahrschule-spurwechsel-desk.webp)"></div></div><div class="phone"><img src="img/fahrschule-spurwechsel-mob.webp" alt="" loading="lazy"></div></a>
-<div class="rv d1"><span class="tag p">Premium · 990 €</span><h3>Fahrschule Spurwechsel</h3><p>Fahrschule mit zwei Standorten. Klassen und Preise, Theorietermine mit freien Plätzen, FAQ und Online-Anmeldung.</p><ul><li>Klassen &amp; Preise</li><li>Kurstermine</li><li>Standorte</li><li>Anmeldeformular</li></ul><a class="btn lime arrow" href="beispiele/fahrschule-spurwechsel/">Seite ansehen</a></div>
+<div class="rv d1"><span class="tag ">249 € · 1 Seite</span><h3>Simple-Bundle</h3><p class="ex-name">Beispiel: <b>Salon Mira</b></p><p>Friseursalon in Prenzlauer Berg. Ein eleganter Onepager mit Preisliste, Team, Galerie und Online-Terminbuchung – alles auf einer Seite.</p><ul><li>Onepager</li><li>Preisliste</li><li>Team &amp; Galerie</li><li>Termin-Button</li></ul><a class="btn lime arrow" href="beispiele/salon-mira/">Salon Mira ansehen</a></div>
+</div><div class="proj">
+<a class="stage rv" href="beispiele/spurwechsel/"><div class="laptop"><div class="scr" style="background-image:url(img/spurwechsel-desk.webp)"></div></div><div class="phone"><img src="img/spurwechsel-mob.webp" alt="" loading="lazy"></div></a>
+<div class="rv d1"><span class="tag m">490 € · 3 Seiten</span><h3>Medium-Bundle</h3><p class="ex-name">Beispiel: <b>Fahrschule Spurwechsel</b></p><p>Fahrschule mit zwei Standorten. Startseite, Klassen &amp; Preise und Termine mit Anmeldung – mit Scroll-Fortschritt als Fahrbahn.</p><ul><li>3 Seiten</li><li>Klassen &amp; Preise</li><li>Kurstermine</li><li>Anmeldeformular</li></ul><a class="btn lime arrow" href="beispiele/spurwechsel/">Fahrschule Spurwechsel ansehen</a></div>
+</div><div class="proj">
+<a class="stage rv" href="beispiele/kiezburger/"><div class="laptop"><div class="scr" style="background-image:url(img/kiezburger-desk.webp)"></div></div><div class="phone"><img src="img/kiezburger-mob.webp" alt="" loading="lazy"></div></a>
+<div class="rv d1"><span class="tag p">990 € · 5 Seiten</span><h3>Premium-Bundle</h3><p class="ex-name">Beispiel: <b>Kiezburger</b></p><p>Burgerladen mit zwei Filialen. Fünf Seiten voller Effekte: Parallax, horizontale Burger-Galerie, Sticky-Story, Live-Öffnungsstatus und eine Karte mit Bildvorschau.</p><ul><li>5 Seiten</li><li>Individuelles Design</li><li>Animationen</li><li>Catering-Anfrage</li></ul><a class="btn lime arrow" href="beispiele/kiezburger/">Kiezburger ansehen</a></div>
 </div>
 </div></section>
 
@@ -262,21 +260,21 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 </div>
 </div></section>
 
-<section id="preise" style="padding-top:0"><div class="wrap">
+<section id="preise" style="padding-top:0"><div class="wrap wide">
 <div class="center"><div class="kicker rv">Preise</div><h2 class="rv d1">Ein Preis. Keine Überraschungen.</h2><p class="sub rv d2">Einmaliger Festpreis. Die Hälfte bei Auftrag, den Rest erst, wenn Ihre Seite online ist.</p></div>
 <div class="plans">
-<div class="plan rv"><h3>Simple</h3><p class="for">Für Betriebe, die schnell online sein wollen.</p>
+<div class="plan rv"><h3>Simple-Bundle</h3><p class="for">Für Betriebe, die schnell online sein wollen.</p>
 <div class="price">249 €<s>390 €</s></div><div class="once">einmalig · Einführungspreis</div>
 <ul><li>Onepager mit allen wichtigen Infos</li><li>Perfekt auf dem Handy</li><li>Anruf-, WhatsApp- oder Bestell-Button</li><li>Öffnungszeiten, Adresse, Kartenlink</li><li>Impressum &amp; Datenschutz eingerichtet</li><li>Online in 5 Tagen</li></ul>
-<a class="btn" href="#anfrage" data-paket="Simple">Simple anfragen</a><a class="demo" href="beispiele/smash-kiez/">Beispiel: Burgerladen</a></div>
-<div class="plan hot rv d1"><h3>Medium <span class="pill">Beliebt</span></h3><p class="for">Für mehrere Leistungen – oder eine alte Website.</p>
+<a class="btn" href="#anfrage" data-paket="Simple">Simple anfragen</a><a class="demo" href="beispiele/salon-mira/">Beispiel: Salon Mira</a></div>
+<div class="plan hot rv d1"><h3>Medium-Bundle <span class="pill">Beliebt</span></h3><p class="for">Für mehrere Leistungen – oder eine alte Website.</p>
 <div class="price">490 €<s>790 €</s></div><div class="once">einmalig · Einführungspreis</div>
-<ul><li>Alles aus Simple</li><li>Bis zu 5 Seiten – oder Relaunch bis 10 Seiten</li><li>Ihre bisherigen Inhalte übernommen</li><li>Online-Terminbuchung verknüpft</li><li>Galerie &amp; Team</li><li>Alte Links weitergeleitet, Google-Grundlagen</li><li>2 Korrekturrunden</li></ul>
-<a class="btn" href="#anfrage" data-paket="Medium">Medium anfragen</a><a class="demo" href="beispiele/salon-mira/">Beispiel: Friseursalon</a></div>
-<div class="plan rv d2"><h3>Premium</h3><p class="for">Für den Auftritt, der sich von allen abhebt.</p>
+<ul><li>Alles aus Simple</li><li>Bis zu 3 Seiten – oder Relaunch bis 10 Seiten</li><li>Ihre bisherigen Inhalte übernommen</li><li>Termin- oder Anmeldeformular</li><li>Galerie &amp; Team</li><li>Alte Links weitergeleitet, Google-Grundlagen</li><li>2 Korrekturrunden</li></ul>
+<a class="btn" href="#anfrage" data-paket="Medium">Medium anfragen</a><a class="demo" href="beispiele/spurwechsel/">Beispiel: Fahrschule Spurwechsel</a></div>
+<div class="plan rv d2"><h3>Premium-Bundle</h3><p class="for">Für den Auftritt, der sich von allen abhebt.</p>
 <div class="price">990 €<s>1.490 €</s></div><div class="once">einmalig · Einführungspreis</div>
-<ul><li>Alles aus Medium</li><li>Bis zu 12 Seiten, individuelles Design</li><li>Texte schreiben wir für Sie</li><li>Anmelde- oder Anfrageformular</li><li>Fotos vor Ort (Berlin)</li><li>Google-Unternehmensprofil eingerichtet</li><li>3 Monate Pflege inklusive</li></ul>
-<a class="btn" href="#anfrage" data-paket="Premium">Premium anfragen</a><a class="demo" href="beispiele/fahrschule-spurwechsel/">Beispiel: Fahrschule</a></div>
+<ul><li>Alles aus Medium</li><li>Bis zu 5 Seiten, individuelles Design</li><li>Texte schreiben wir für Sie</li><li>Animationen &amp; Effekte</li><li>Fotos vor Ort (Berlin)</li><li>Google-Unternehmensprofil eingerichtet</li><li>3 Monate Pflege inklusive</li></ul>
+<a class="btn" href="#anfrage" data-paket="Premium">Premium anfragen</a><a class="demo" href="beispiele/kiezburger/">Beispiel: Kiezburger</a></div>
 </div>
 <div class="addon rv"><div><strong>Pflege &amp; Hosting · 19 € / Monat</strong><br><span class="small">Hosting, SSL, Updates und kleine Änderungen inklusive. Optional und monatlich kündbar.</span></div><a class="btn ghost sm" href="#anfrage">Mit anfragen</a></div>
 <p class="small center" style="margin-top:18px">Alle Preise zzgl. Domain (gehört Ihnen). Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
@@ -342,7 +340,7 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
 hero.addEventListener('pointermove',e=>{const b=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-b.left)+'px');hero.style.setProperty('--my',(e.clientY-b.top)+'px')});
 let pending=[...document.querySelectorAll('.rv')];
 const reveal=()=>{pending=pending.filter(el=>{if(el.getBoundingClientRect().top>innerHeight*.9)return true;el.classList.add('in');
-  el.querySelectorAll('[data-count]').forEach(c=>{const t=+c.dataset.count,t0=performance.now();const f=n=>{const k=Math.min(1,(n-t0)/1200);c.textContent=Math.round(t*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)});
+  el.querySelectorAll('[data-count]').forEach(c=>{const t=+c.dataset.count,t0=performance.now();const f=n=>{const k=Math.max(0,Math.min(1,(n-t0)/1200));c.textContent=Math.round(t*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)});
   return false})};
 addEventListener('scroll',reveal,{passive:true});addEventListener('resize',reveal);reveal();
 const ba=document.getElementById('ba'),rg=document.getElementById('baRange');rg.addEventListener('input',()=>ba.style.setProperty('--x',rg.value+'%'));
