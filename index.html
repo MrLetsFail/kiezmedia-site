@@ -8,7 +8,7 @@
 <meta property="og:title" content="Kiezmedia – Websites, über die der Kiez spricht">
 <meta property="og:description" content="Festpreis ab 249 €, online in 5 Tagen, kostenlose Vorschau.">
 <meta property="og:image" content="https://mrletsfail.github.io/kiezmedia-site/img/kiezburger-desk.webp">
-<meta name="theme-color" content="#0b0b0a">
+<meta name="theme-color" content="#0b0b0a"><link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <style>
 :root{--bg:#f6f4ef;--card:#fff;--ink:#0f0f0e;--ink-2:#5a5852;--line:#e3dfd4;--lime:#d4ff3a;--dark:#0b0b0a;--on-dark:#f3f1ea;--mut-dark:#9c998f;--r:22px;--max:1200px;--ease:cubic-bezier(.2,.8,.2,1)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -20,7 +20,7 @@ a{color:inherit}img{max-width:100%;display:block}
 .nav.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logo{font-weight:800;font-size:21px;letter-spacing:-.035em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.logo i{width:13px;height:13px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px currentColor;animation:pulse 2.4s infinite}
+.logo .mk{height:38px;width:auto;display:block;transition:transform .4s var(--ease)}.logo:hover .mk{transform:rotate(-6deg) scale(1.06)}.logo span{font-size:23px;letter-spacing:-.045em}.nav{--mk-bg:#0b0b0a}.nav.solid{--mk-bg:var(--bg)}footer{--mk-bg:var(--dark)}
 @keyframes pulse{50%{box-shadow:0 0 0 6px currentColor}}
 .nav nav{display:flex;align-items:center;gap:28px}.nav nav a{text-decoration:none;font-size:15px;opacity:.75}.nav nav a:hover{opacity:1}
 @media(max-width:780px){.nav nav a:not(.btn){display:none}}
@@ -242,14 +242,14 @@ textarea{min-height:110px}.row2{display:grid;grid-template-columns:1fr 1fr;gap:1
 .check{display:flex;gap:10px;font-weight:400;font-size:14px;color:var(--ink-2);align-items:flex-start}.check input{width:auto;margin-top:3px}
 .contact ul{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px}.contact li{display:flex;gap:14px;align-items:center;font-weight:600}.contact li .ico{width:42px;height:42px;font-size:18px}
 footer{background:var(--dark);color:var(--mut-dark);padding:70px 0 40px;font-size:14px;overflow:hidden}
-footer .big{font-size:clamp(64px,15vw,210px);font-weight:800;letter-spacing:-.07em;line-height:.8;color:var(--on-dark);margin-bottom:40px}footer .big i{color:var(--lime);font-style:normal}
+footer .big{display:flex;align-items:flex-end;gap:clamp(16px,2vw,40px);font-size:clamp(64px,15vw,210px);font-weight:800;letter-spacing:-.07em;line-height:.8;color:var(--on-dark);margin-bottom:40px}footer .big i{color:var(--lime);font-style:normal}footer .mkbig{height:.95em;width:auto;flex:none;color:var(--lime)}
 footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{margin-left:18px;text-decoration:none}footer a:hover{color:var(--lime)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .ln>span{transform:none}.fade{opacity:1}}
 </style>
 </head>
 <body>
 <header class="nav" id="nav"><div class="wrap">
-<a class="logo" href="#top"><i></i>Kiezmedia</a>
+<a class="logo" href="#top" aria-label="kiezmedia – zur Startseite"><svg class="mk" viewBox="170 0 660 470" aria-hidden="true"><path d="M256.67,383.99c-5.99-14.35-12.51-35.98-9.28-60.92,6.54-50.57,46.09-60.3,52.27-112.82.63-5.33,5.42-51.43-22.57-75.99-4.95-4.34-14.24-12.49-26.73-12.46-30.12.06-51.66,47.58-60.34,42.8-2-1.11-2.2-4.39-2.31-6.68-1.33-29.78,22.54-108.3,30.5-94.76,7.96,13.54,91.5,59.56,78.24,31.13-12.06-25.86,7.69,24.44,13.36,22.55.9-.3,1.16-1.88,1.23-2.24,2.76-14.59,98.41-86.75,123.78-62.15,7.83,7.6,11.15,26.56,12.17,26.19.24-.08.64-1.28.64-1.95,0-.87.03-1.28.09-1.28.03,0-2.45,33.03-.09,68.97,1.4,21.39,3.95,35.44,1.42,36.14-4.53,1.24-10.64-44.25-41.83-59.47-9.89-4.83-20.83-5.89-26.3-6.42-12.27-1.19-25.11-2.43-31.39,4.9-1.18,1.38-5.01,6.43-1.36,26.22,5.58,30.24,22.12,59.84,28.95,58.17.57-.14,1.09-.57,1.55-1.31,6.04-9.86,51.04.13,66.3,27.07,12.66,22.35-7.52,33.45-1.16,74.37,5.95,38.31,29.56,66.72,21.43,73.49-1.34,1.12-2.03,1.43-5.69,1.04-25.2-2.71-23.87,36.55-50.39,29.78-26.52-6.77-3.98-89.34-18.57-89.34-11.88,0,13.2-26.96,6.41-36.94-2.05-3.01-6.02-.08-10.39-3.67-5.71-4.7-1.97-11.63-7.05-16.3-6.44-5.93-19.79-1.49-22.98-.43,0,0-3.86,1.28-7.11,3.19-9.79,5.76-37.74,52.55-71.19,118.48" fill="currentColor"/><path d="M298.25,59.77s17.98-25.24,0-25.24S275.77-2.19,292.63.1c16.86,2.29,60.7,9.08,60.7,29.78s-5.51,34.47-21.3,42.51c-15.79,8.03-33.77-12.62-33.77-12.62Z" fill="currentColor"/><path d="M622.93,119.57s-19.36-94-.45-82.5c18.92,11.51,75.49,8.17,58.74,16.72-16.75,8.54,9.89,45.03-24.2,55.4s-24.29,23.36-27.62,23.9" fill="currentColor"/><path d="M571.64,161.19c25.78,3.48,50.82,32.05,49.25,57.17-.32,5.05-1.9,13-19.35,34.89-24.75,31.05-36.75,34.1-50.45,51.18-29.6,36.91-32.79,96.47-14.95,108.03,5.79,3.75,10.48.29,26.47-2.48,49.86-8.63,82.84,11.47,87.94,1.69,3.76-7.21-15.73-15.17-26.74-42.43-10.46-25.91-5.04-48.9,3.8-86.41,2.47-10.48,5.73-21.04,14.7-25.67,8.07-4.17,16.82-1.52,18.19-1.08,17.79,5.66,20.31,29.19,34.03,58.25,10.85,22.99,24.98,52.89,47.99,59.95,36.26,11.12,87.44-36.68,81.55-54.32-4.08-12.23-32.59-1.03-73.5-19.93-40.12-18.54-64.04-56.6-61.49-59.48,1.65-1.86,16.44,8.52,16.97,7.72.9-1.38-49.6-22.95-50.44-50.83-.61-20.25,25.02-42.33,40.6-38.57,7.55,1.82,9.5,9.21,19.73,25.25,14.86,23.29,37.53,49.67,43.28,46.66,4.66-2.43-5.72-22.07-11.82-61.79-6.08-39.59-.99-54.08-12.3-62.5-11.48-8.54-28.9-2.67-46.97,3.42-11.23,3.79-33.53,11.3-47.64,32.26-11.4,16.93-9.21,30.4-14.79,31.04-12.08,1.4-14.93-62.72-56.1-81.1-4.16-1.86-12.66-5.53-22.86-4-44.52,6.67-65.96,104.11-50.97,113.32,11.79,7.24,37.36-45.44,75.84-40.24Z" fill="currentColor"/><ellipse cx="642.42" cy="69.41" rx="8.15" ry="8.32" fill="currentColor" stroke="var(--mk-bg,#0b0b0a)" stroke-width="2" stroke-miterlimit="10"/><ellipse cx="622.5" cy="71.61" rx="8.15" ry="8.32" fill="currentColor" stroke="var(--mk-bg,#0b0b0a)" stroke-width="2" stroke-miterlimit="10"/><polygon points="634.39 70.75 630.65 71.17 630.6 70.72 634.34 70.3 634.39 70.75" fill="currentColor" stroke="var(--mk-bg,#0b0b0a)" stroke-width="2" stroke-miterlimit="10"/></svg><span>kiezmedia</span></a>
 <nav><a href="#vorher-nachher">Vorher/Nachher</a><a href="#arbeiten">Beispiele</a><a href="#preise">Preise</a><a href="#faq">FAQ</a><a class="btn lime sm" href="#anfrage">Kostenlose Vorschau</a></nav>
 </div></header>
 
@@ -266,7 +266,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 <div class="phone l"><img src="img/salon-mira-mob.webp" alt="Beispielseite Friseursalon auf dem Handy" width="500" height="1080"></div>
 <div class="phone c"><img src="img/kiezburger-mob.webp" alt="Beispielseite Burgerladen auf dem Handy" width="500" height="1080"></div>
 <div class="phone r"><img src="img/spurwechsel-mob.webp" alt="Beispielseite Fahrschule auf dem Handy" width="500" height="1080"></div>
-<span class="tagfloat t1">📞 1 Tipp zum Anruf</span><span class="tagfloat t2">⚡ lädt in &lt; 1 s</span>
+
 </div>
 </div>
 <div class="marquee" aria-hidden="true"><div class="track">
@@ -280,7 +280,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 <p class="sub rv d2">Ziehen Sie den Regler. So groß ist der Unterschied zwischen einer Website von damals und einer, die heute Kunden bringt.</p></div>
 <div class="stats">
 <div class="stat rv"><b><span data-count="5">0</span> Tage</b><span>von der Vorschau bis online</span></div>
-<div class="stat rv d1"><b><span data-count="48">0</span> h</b><span>bis zu Ihrer kostenlosen Vorschau</span></div>
+<div class="stat rv d1"><b><span data-count="24">0</span> h</b><span>bis zu Ihrer kostenlosen Vorschau</span></div>
 <div class="stat rv d2"><b><span data-count="0">0</span> €</b><span>Risiko – Sie zahlen erst, wenn es gefällt</span></div>
 </div></div>
 <div class="ba rv" id="ba">
@@ -374,7 +374,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 </div>
 </div></section>
 
-<div class="wrap rv"><a class="bigcta" href="#anfrage"><div class="l">Ihre Vorschau ist kostenlos.<small>Schicken Sie uns Ihre Website – in 48 Stunden sehen Sie, wie sie neu aussehen kann.</small></div><div class="r">→</div></a></div>
+<div class="wrap rv"><a class="bigcta" href="#anfrage"><div class="l">Ihre Vorschau ist kostenlos.<small>Schicken Sie uns Ihre Website – in 24 Stunden sehen Sie, wie sie neu aussehen kann.</small></div><div class="r">→</div></a></div>
 
 <section id="faq"><div class="wrap">
 <div class="center"><div class="kicker rv">FAQ</div><h2 class="rv d1">Häufige Fragen</h2></div>
@@ -412,7 +412,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}f
 </section>
 </main>
 
-<footer><div class="wrap"><div class="big">Kiez<i>media</i>.</div><div class="row"><span>© 2026 Kiezmedia GbR · Berlin</span><span><a href="#anfrage">Kontakt</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span></div></div></footer>
+<footer><div class="wrap"><div class="big"><svg class="mkbig" viewBox="170 0 660 470" aria-hidden="true"><path d="M256.67,383.99c-5.99-14.35-12.51-35.98-9.28-60.92,6.54-50.57,46.09-60.3,52.27-112.82.63-5.33,5.42-51.43-22.57-75.99-4.95-4.34-14.24-12.49-26.73-12.46-30.12.06-51.66,47.58-60.34,42.8-2-1.11-2.2-4.39-2.31-6.68-1.33-29.78,22.54-108.3,30.5-94.76,7.96,13.54,91.5,59.56,78.24,31.13-12.06-25.86,7.69,24.44,13.36,22.55.9-.3,1.16-1.88,1.23-2.24,2.76-14.59,98.41-86.75,123.78-62.15,7.83,7.6,11.15,26.56,12.17,26.19.24-.08.64-1.28.64-1.95,0-.87.03-1.28.09-1.28.03,0-2.45,33.03-.09,68.97,1.4,21.39,3.95,35.44,1.42,36.14-4.53,1.24-10.64-44.25-41.83-59.47-9.89-4.83-20.83-5.89-26.3-6.42-12.27-1.19-25.11-2.43-31.39,4.9-1.18,1.38-5.01,6.43-1.36,26.22,5.58,30.24,22.12,59.84,28.95,58.17.57-.14,1.09-.57,1.55-1.31,6.04-9.86,51.04.13,66.3,27.07,12.66,22.35-7.52,33.45-1.16,74.37,5.95,38.31,29.56,66.72,21.43,73.49-1.34,1.12-2.03,1.43-5.69,1.04-25.2-2.71-23.87,36.55-50.39,29.78-26.52-6.77-3.98-89.34-18.57-89.34-11.88,0,13.2-26.96,6.41-36.94-2.05-3.01-6.02-.08-10.39-3.67-5.71-4.7-1.97-11.63-7.05-16.3-6.44-5.93-19.79-1.49-22.98-.43,0,0-3.86,1.28-7.11,3.19-9.79,5.76-37.74,52.55-71.19,118.48" fill="currentColor"/><path d="M298.25,59.77s17.98-25.24,0-25.24S275.77-2.19,292.63.1c16.86,2.29,60.7,9.08,60.7,29.78s-5.51,34.47-21.3,42.51c-15.79,8.03-33.77-12.62-33.77-12.62Z" fill="currentColor"/><path d="M622.93,119.57s-19.36-94-.45-82.5c18.92,11.51,75.49,8.17,58.74,16.72-16.75,8.54,9.89,45.03-24.2,55.4s-24.29,23.36-27.62,23.9" fill="currentColor"/><path d="M571.64,161.19c25.78,3.48,50.82,32.05,49.25,57.17-.32,5.05-1.9,13-19.35,34.89-24.75,31.05-36.75,34.1-50.45,51.18-29.6,36.91-32.79,96.47-14.95,108.03,5.79,3.75,10.48.29,26.47-2.48,49.86-8.63,82.84,11.47,87.94,1.69,3.76-7.21-15.73-15.17-26.74-42.43-10.46-25.91-5.04-48.9,3.8-86.41,2.47-10.48,5.73-21.04,14.7-25.67,8.07-4.17,16.82-1.52,18.19-1.08,17.79,5.66,20.31,29.19,34.03,58.25,10.85,22.99,24.98,52.89,47.99,59.95,36.26,11.12,87.44-36.68,81.55-54.32-4.08-12.23-32.59-1.03-73.5-19.93-40.12-18.54-64.04-56.6-61.49-59.48,1.65-1.86,16.44,8.52,16.97,7.72.9-1.38-49.6-22.95-50.44-50.83-.61-20.25,25.02-42.33,40.6-38.57,7.55,1.82,9.5,9.21,19.73,25.25,14.86,23.29,37.53,49.67,43.28,46.66,4.66-2.43-5.72-22.07-11.82-61.79-6.08-39.59-.99-54.08-12.3-62.5-11.48-8.54-28.9-2.67-46.97,3.42-11.23,3.79-33.53,11.3-47.64,32.26-11.4,16.93-9.21,30.4-14.79,31.04-12.08,1.4-14.93-62.72-56.1-81.1-4.16-1.86-12.66-5.53-22.86-4-44.52,6.67-65.96,104.11-50.97,113.32,11.79,7.24,37.36-45.44,75.84-40.24Z" fill="currentColor"/><ellipse cx="642.42" cy="69.41" rx="8.15" ry="8.32" fill="currentColor" stroke="var(--mk-bg,#0b0b0a)" stroke-width="2" stroke-miterlimit="10"/><ellipse cx="622.5" cy="71.61" rx="8.15" ry="8.32" fill="currentColor" stroke="var(--mk-bg,#0b0b0a)" stroke-width="2" stroke-miterlimit="10"/><polygon points="634.39 70.75 630.65 71.17 630.6 70.72 634.34 70.3 634.39 70.75" fill="currentColor" stroke="var(--mk-bg,#0b0b0a)" stroke-width="2" stroke-miterlimit="10"/></svg><span>kiez<i>media</i></span></div><div class="row"><span>© 2026 Kiezmedia GbR · Berlin</span><span><a href="#anfrage">Kontakt</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span></div></div></footer>
 
 <div class="pv" id="pv" role="dialog" aria-modal="true" aria-label="Mobile Vorschau"><button class="x" type="button" aria-label="Schließen">×</button><div class="dev"><iframe title="Mobile Vorschau" loading="lazy"></iframe></div><div class="side"><h3 id="pvname">Mobil</h3><p>So sieht die Seite auf dem Smartphone aus. Scrollen Sie im Handy – alle Effekte funktionieren.</p><a class="btn lime arrow" id="pvopen" href="#">Im Browser öffnen</a></div></div>
 <script>
