@@ -3,95 +3,302 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kiezmedia – Websites für Betriebe im Kiez. Festpreis, online in 5 Tagen.</title>
-<meta name="description" content="Kiezmedia baut Websites für Handwerk, Gastro, Salons und Praxen in Berlin: mobil, schnell, zum Festpreis. Kostenlose Vorschau, erst sehen, dann zahlen.">
+<title>Kiezmedia – Websites, über die der Kiez spricht</title>
+<meta name="description" content="Kiezmedia baut Websites für Handwerk, Gastro, Salons und Praxen in Berlin: mobil, schnell, zum Festpreis ab 249 €. Kostenlose Vorschau – erst sehen, dann zahlen.">
 <meta property="og:title" content="Kiezmedia – Websites, über die der Kiez spricht">
 <meta property="og:description" content="Festpreis ab 249 €, online in 5 Tagen, kostenlose Vorschau.">
-<link rel="stylesheet" href="styles.css">
+<meta property="og:image" content="https://mrletsfail.github.io/kiezmedia-site/img/smash-kiez-desk.webp">
+<meta name="theme-color" content="#0b0b0a">
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#0f0f0e;--ink-2:#5a5852;--line:#e3dfd4;--lime:#d4ff3a;--dark:#0b0b0a;--on-dark:#f3f1ea;--mut-dark:#9c998f;--r:22px;--max:1200px;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+/* NAV */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,color .3s,box-shadow .3s;color:var(--on-dark)}
+.nav.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-weight:800;font-size:21px;letter-spacing:-.035em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:13px;height:13px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px currentColor;animation:pulse 2.4s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px currentColor}}
+.nav nav{display:flex;align-items:center;gap:28px}.nav nav a{text-decoration:none;font-size:15px;opacity:.75}.nav nav a:hover{opacity:1}
+@media(max-width:780px){.nav nav a:not(.btn){display:none}}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg)!important;padding:15px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:16px;opacity:1!important;transition:transform .25s var(--ease),box-shadow .25s}
+.btn:hover{transform:translateY(-2px)}.btn.lime{background:var(--lime);color:#0f0f0e!important;box-shadow:0 10px 30px -10px rgba(212,255,58,.7)}
+.btn.ghost{background:transparent;color:inherit!important;box-shadow:inset 0 0 0 1.5px currentColor}
+.btn.sm{padding:10px 18px;font-size:14px}.arrow::after{content:"→";font-weight:800;transition:transform .25s var(--ease)}.arrow:hover::after{transform:translateX(4px)}
+/* HERO */
+.hero{background:var(--dark);color:var(--on-dark);position:relative;overflow:hidden;padding:150px 0 0;text-align:center;--mx:50%;--my:30%}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx) var(--my),rgba(212,255,58,.16),transparent 60%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 20%,#000 30%,transparent 75%);pointer-events:none}
+.eyebrow{position:relative;z-index:1;display:inline-flex;gap:10px;align-items:center;font-size:14px;font-weight:600;padding:7px 16px 7px 8px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
+.eyebrow b{background:var(--lime);color:#0f0f0e;border-radius:999px;padding:2px 9px;font-size:12px}
+.hero h1{position:relative;z-index:1;font-size:clamp(46px,9vw,124px);line-height:.92;letter-spacing:-.06em;margin:28px auto 26px;max-width:12ch;font-weight:800}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}.hero h1 .ln>span{display:inline-block;transform:translateY(105%);animation:up .9s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}.hero h1 .ln:nth-child(3)>span{animation-delay:.24s}
+.hero h1 em{font-style:normal;color:var(--lime)}
+@keyframes up{to{transform:none}}
+.fade{opacity:0;animation:fade .9s var(--ease) .45s forwards}@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero p.lead{position:relative;z-index:1;font-size:clamp(18px,2.1vw,22px);color:var(--mut-dark);max-width:44ch;margin:0 auto 36px}
+.cta-row{position:relative;z-index:1;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hint{position:relative;z-index:1;font-size:14px;color:var(--mut-dark);margin-top:18px}
+/* PHONES */
+.phones{position:relative;z-index:1;height:clamp(420px,56vw,640px);margin-top:70px;--p:0}
+.phone{position:absolute;left:50%;bottom:-70px;width:clamp(200px,24vw,300px);aspect-ratio:9/19.2;border-radius:44px;background:#1a1a18;padding:10px;box-shadow:0 0 0 2px #2c2c29,0 50px 100px -30px rgba(0,0,0,.8);transition:transform .15s linear}
+.phone::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:32%;height:22px;border-radius:20px;background:#0b0b0a;z-index:2}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:35px}
+.phone.c{transform:translateX(-50%) translateY(calc(var(--p)*-40px));z-index:3}
+.phone.l{transform:translateX(calc(-50% - 62% - var(--p)*18%)) rotate(calc(-8deg - var(--p)*6deg)) translateY(calc(40px + var(--p)*20px));z-index:2}
+.phone.r{transform:translateX(calc(-50% + 62% + var(--p)*18%)) rotate(calc(8deg + var(--p)*6deg)) translateY(calc(40px + var(--p)*20px));z-index:2}
+.tagfloat{position:absolute;z-index:4;background:var(--lime);color:#0f0f0e;font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:bob 4s ease-in-out infinite}
+.tagfloat.t1{left:12%;top:18%}.tagfloat.t2{right:11%;top:34%;background:#fff;animation-delay:-2s}
+@keyframes bob{50%{transform:translateY(-10px) rotate(-2deg)}}
+@media(max-width:700px){.phone.l,.phone.r{opacity:.55}.tagfloat{display:none}}
+/* MARQUEE */
+.marquee{background:var(--lime);color:#0f0f0e;overflow:hidden;padding:18px 0;transform:rotate(-1.2deg) scale(1.02);margin-top:-10px;position:relative;z-index:5}
+.marquee .track{display:flex;width:max-content;animation:mq 30s linear infinite;font-weight:800;font-size:clamp(22px,3vw,34px);letter-spacing:-.03em}
+.marquee span{padding:0 22px;white-space:nowrap}.marquee span::after{content:"✦";margin-left:44px;font-size:.7em;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* SECTIONS */
+section{padding:120px 0}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-2);margin-bottom:16px}.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 2px var(--ink)}
+h2{font-size:clamp(36px,5.6vw,70px);line-height:.98;letter-spacing:-.05em;margin:0 0 18px;font-weight:800;max-width:15ch}
+.sub{color:var(--ink-2);font-size:19px;max-width:52ch;margin:0 0 52px}
+.center{text-align:center}.center h2,.center .sub{margin-left:auto;margin-right:auto}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+/* BEFORE/AFTER */
+.ba{position:relative;border-radius:var(--r);overflow:hidden;height:clamp(420px,52vw,580px);box-shadow:0 40px 80px -40px rgba(0,0,0,.45);user-select:none;--x:50%;border:1px solid var(--line);background:#fff}
+.ba .pane{position:absolute;inset:0;overflow:hidden}
+.ba .new{clip-path:inset(0 0 0 var(--x))}
+.old{background:#c0c0c0;font-family:"Times New Roman",Times,serif;color:#000;padding:14px}
+.old .ttl{background:linear-gradient(#000080,#1084d0);color:#fff;font:bold 15px Tahoma,Arial,sans-serif;padding:4px 8px;margin:-14px -14px 12px}
+.old .banner{background:#ffff00;border:3px ridge #999;text-align:center;font:bold italic 30px "Comic Sans MS","Comic Sans",cursive;color:#ff0000;padding:10px;margin-bottom:10px}
+.old table{width:100%;border:2px outset #fff;background:#fff;border-collapse:separate}.old td{border:1px inset #999;padding:8px;vertical-align:top;font-size:15px}
+.old .navc{width:28%;background:#e0e0ff}.old .navc a{display:block;color:#0000ee;text-decoration:underline;margin:4px 0}
+.old .blink{color:#ff0000;font-weight:bold;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.old .count{font-family:monospace;background:#000;color:#0f0;padding:2px 6px;display:inline-block}
+.old .uc{margin-top:10px;font-size:13px}
+.new{background:#101a2e;color:#fff;font-family:inherit}
+.new .nh{display:flex;justify-content:space-between;align-items:center;padding:20px 32px}.new .nh b{font-size:20px;letter-spacing:-.03em}.new .nh span{background:#ffb020;color:#101a2e;font-weight:800;padding:9px 18px;border-radius:999px;font-size:14px}
+.new .nb{padding:40px 32px 0 max(32px,var(--x))}
+.new h3{font-size:clamp(34px,4.6vw,62px);line-height:.95;letter-spacing:-.05em;margin:0 0 16px;max-width:11ch}.new h3 i{font-style:normal;color:#ffb020}
+.new p{color:#a9b4cc;max-width:36ch;margin:0 0 24px}.new .cards{display:flex;gap:12px;flex-wrap:wrap}.new .cards div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px 18px;font-weight:700;font-size:15px}
+.new .call{display:inline-block;background:#ffb020;color:#101a2e;font-weight:800;padding:15px 26px;border-radius:14px;margin-bottom:26px;text-decoration:none}
+.handle{position:absolute;top:0;bottom:0;left:var(--x);width:0;z-index:3;pointer-events:none}
+.handle::before{content:"";position:absolute;top:0;bottom:0;left:-1.5px;width:3px;background:var(--lime)}
+.handle::after{content:"⟷";position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--lime);color:#0f0f0e;font-size:26px;font-weight:800;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
+.lbl{position:absolute;bottom:18px;z-index:2;font-size:13px;font-weight:800;padding:6px 12px;border-radius:999px;background:#0f0f0e;color:#fff}.lbl.a{left:18px}.lbl.b{right:18px;background:var(--lime);color:#0f0f0e}
+@media(max-width:700px){.new h3{font-size:30px}.new .cards{display:none}.new .nb{padding-top:22px;padding-right:18px}.new .nh{padding:16px 18px}.new p{font-size:15px}.old .banner{font-size:19px}.old td{font-size:13px}.handle::after{width:46px;height:46px}}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:70px}
+.stat{border-top:2px solid var(--ink);padding-top:18px}.stat b{display:block;font-size:clamp(56px,7vw,96px);letter-spacing:-.06em;line-height:1}.stat span{color:var(--ink-2)}
+@media(max-width:700px){.stats{grid-template-columns:1fr}}
+/* WORK */
+.work{background:var(--dark);color:var(--on-dark)}.work .kicker{color:var(--mut-dark)}.work .kicker::before{box-shadow:0 0 0 2px var(--on-dark)}.work .sub{color:var(--mut-dark)}
+.proj{display:grid;grid-template-columns:1.35fr 1fr;gap:60px;align-items:center;margin-bottom:120px}.proj:last-child{margin-bottom:0}
+.proj:nth-child(even) .stage{order:2}
+.stage{position:relative;padding-bottom:40px}
+.laptop{border-radius:18px;background:#1c1c1a;padding:12px 12px 0;box-shadow:0 0 0 1.5px #2e2e2b,0 60px 90px -40px rgba(0,0,0,.9)}
+.laptop .scr{height:clamp(240px,28vw,380px);border-radius:8px 8px 0 0;overflow:hidden;background-size:100% auto;background-position:top center;background-repeat:no-repeat;transition:background-position 5s ease-in-out}
+.proj:hover .laptop .scr{background-position:bottom center}
+.laptop::after{content:"";display:block;height:16px;margin:0 -30px;background:linear-gradient(#2e2e2b,#161614);border-radius:0 0 18px 18px}
+.stage .phone{position:absolute;left:auto;right:-14px;bottom:0;width:clamp(120px,13vw,170px);border-radius:28px;padding:6px;transform:none!important}
+.stage .phone::before{top:11px;height:14px}.stage .phone img{border-radius:22px}
+.proj:nth-child(even) .stage .phone{right:auto;left:-14px}
+.proj .tag{display:inline-block;font-size:13px;font-weight:800;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.1);margin-bottom:18px}.proj .tag.m{background:var(--lime);color:#0f0f0e}.proj .tag.p{background:#fff;color:#0f0f0e}
+.proj h3{font-size:clamp(34px,4.4vw,56px);letter-spacing:-.05em;line-height:1;margin:0 0 14px}
+.proj p{color:var(--mut-dark);margin:0 0 22px;max-width:40ch}
+.proj ul{list-style:none;padding:0;margin:0 0 30px;display:flex;flex-wrap:wrap;gap:8px}.proj li{font-size:14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 12px}
+@media(max-width:900px){.proj{grid-template-columns:1fr;gap:40px}.proj:nth-child(even) .stage{order:0}}
+/* BENTO */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:transform .35s var(--ease),box-shadow .35s}.tile:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.25)}
+.tile h3{font-size:23px;letter-spacing:-.02em;margin:18px 0 8px}.tile p{margin:0;color:var(--ink-2)}
+.tile.w2{grid-column:span 2;background:var(--lime);border:0}.tile.w2 p{color:#3a3f1c}.tile.w2 h3{font-size:clamp(30px,3.6vw,44px);letter-spacing:-.04em;max-width:16ch}
+.ico{width:48px;height:48px;border-radius:14px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-size:22px;font-weight:800}
+.tile.w2 .ico{background:#0f0f0e}
+.meter{height:10px;border-radius:9px;background:rgba(0,0,0,.12);margin-top:22px;overflow:hidden}.meter i{display:block;height:100%;width:0;background:#0f0f0e;border-radius:9px;transition:width 1.6s var(--ease) .3s}.in .meter i{width:98%}
+.mrow{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-top:8px;color:#3a3f1c}
+@media(max-width:900px){.bento{grid-template-columns:1fr}.tile.w2{grid-column:auto}}
+/* PRICING */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px;display:flex;flex-direction:column;transition:transform .35s var(--ease)}
+.plan:hover{transform:translateY(-6px)}
+.plan.hot{background:var(--dark);color:var(--on-dark);border:0;box-shadow:0 40px 80px -30px rgba(0,0,0,.55);position:relative;overflow:hidden}
+.plan.hot::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(212,255,58,.25),transparent 70%);top:-120px;right:-120px}
+.plan h3{font-size:26px;margin:0;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.pill{font-size:12px;font-weight:800;background:var(--lime);color:#0f0f0e;padding:3px 10px;border-radius:999px;letter-spacing:0}
+.plan .for{color:var(--ink-2);margin:6px 0 24px;font-size:15px}.plan.hot .for,.plan.hot li{color:#d4d1c8}
+.price{font-size:62px;font-weight:800;letter-spacing:-.055em;line-height:1}
+.price s{font-size:20px;font-weight:600;color:var(--ink-2);letter-spacing:0;margin-left:8px}.plan.hot .price s{color:#8f8c84}
+.once{font-size:14px;color:var(--ink-2);margin:8px 0 26px}.plan.hot .once{color:#8f8c84}
+.plan ul{list-style:none;padding:0;margin:0 0 30px;display:grid;gap:11px;flex:1;align-content:start}
+.plan li{padding-left:30px;position:relative;font-size:15px}.plan li::before{content:"✓";position:absolute;left:0;top:2px;width:19px;height:19px;border-radius:50%;background:var(--lime);color:#0f0f0e;font-size:11px;font-weight:800;display:grid;place-items:center}
+.plan .btn{justify-content:center}.plan.hot .btn{background:var(--lime);color:#0f0f0e!important}
+.plan .demo{font-size:14px;text-align:center;margin-top:14px;text-underline-offset:3px;opacity:.8}
+.addon{margin-top:20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:var(--card);border:1.5px dashed var(--ink-2);border-radius:var(--r);padding:22px 30px}
+.small{font-size:14px;color:var(--ink-2)}
+@media(max-width:900px){.plans{grid-template-columns:1fr}}
+/* STEPS */
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:34px}
+.steps::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--line);border-radius:3px}
+.steps .fill{position:absolute;top:0;left:0;height:3px;width:calc(var(--sp,0)*100%);background:var(--ink);border-radius:3px}
+.step{position:relative}.step::before{content:"";position:absolute;top:-42px;left:0;width:19px;height:19px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 3px var(--ink)}
+.step.on::before{background:var(--lime)}
+.step small{font-weight:800;color:var(--ink-2)}.step h3{font-size:24px;margin:6px 0 8px;letter-spacing:-.02em}.step p{margin:0;color:var(--ink-2);font-size:15px}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:60px}}@media(max-width:520px){.steps{grid-template-columns:1fr}}
+/* BIG CTA */
+.bigcta{display:grid;grid-template-columns:1fr auto;border-radius:var(--r);overflow:hidden;text-decoration:none}
+.bigcta .l{background:var(--lime);color:#0f0f0e;padding:48px 52px;font-size:clamp(30px,4.6vw,58px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.bigcta .l small{display:block;font-size:18px;font-weight:500;letter-spacing:0;margin-top:16px;opacity:.75;line-height:1.5}
+.bigcta .r{background:#0f0f0e;color:var(--lime);display:grid;place-items:center;padding:0 60px;font-size:60px;transition:padding .35s var(--ease)}
+.bigcta:hover .r{padding:0 84px}
+@media(max-width:620px){.bigcta{grid-template-columns:1fr}.bigcta .l{padding:34px 26px}.bigcta .r{padding:20px}}
+/* FAQ */
+.faq{max-width:840px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:24px 0}summary{cursor:pointer;font-weight:700;font-size:20px;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::after{content:"+";width:34px;height:34px;flex:none;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;font-size:22px;transition:transform .3s var(--ease)}details[open] summary::after{transform:rotate(45deg);background:var(--lime);border-color:var(--lime)}summary::-webkit-details-marker{display:none}
+details p{color:var(--ink-2);margin:14px 0 0;max-width:62ch}
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+form{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;box-shadow:0 40px 80px -50px rgba(0,0,0,.35)}
+label{font-weight:600;font-size:14px;display:grid;gap:6px}
+input,textarea,select{font:inherit;padding:14px 15px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%;transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus,select:focus{outline:0;border-color:var(--ink);box-shadow:0 0 0 4px rgba(212,255,58,.6)}
+textarea{min-height:110px}.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:560px){.row2{grid-template-columns:1fr}}
+.check{display:flex;gap:10px;font-weight:400;font-size:14px;color:var(--ink-2);align-items:flex-start}.check input{width:auto;margin-top:3px}
+.contact ul{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px}.contact li{display:flex;gap:14px;align-items:center;font-weight:600}.contact li .ico{width:42px;height:42px;font-size:18px}
+footer{background:var(--dark);color:var(--mut-dark);padding:70px 0 40px;font-size:14px;overflow:hidden}
+footer .big{font-size:clamp(64px,15vw,210px);font-weight:800;letter-spacing:-.07em;line-height:.8;color:var(--on-dark);margin-bottom:40px}footer .big i{color:var(--lime);font-style:normal}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{margin-left:18px;text-decoration:none}footer a:hover{color:var(--lime)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .ln>span{transform:none}.fade{opacity:1}}
+</style>
 </head>
 <body>
-<header class="nav"><div class="wrap">
-<a class="logo" href="#"><i></i>Kiezmedia</a>
-<nav><a href="#beispiele">Beispiele</a><a href="#preise">Preise</a><a href="#ablauf">Ablauf</a><a href="#faq">FAQ</a><a class="btn sm" href="#anfrage">Kostenlose Vorschau</a></nav>
+<header class="nav" id="nav"><div class="wrap">
+<a class="logo" href="#top"><i></i>Kiezmedia</a>
+<nav><a href="#vorher-nachher">Vorher/Nachher</a><a href="#arbeiten">Beispiele</a><a href="#preise">Preise</a><a href="#faq">FAQ</a><a class="btn lime sm" href="#anfrage">Kostenlose Vorschau</a></nav>
 </div></header>
 
-<main>
-<div class="hero"><div class="wrap">
-<div class="eyebrow"><b>NEU</b> Einführungspreise für die ersten 5 Betriebe</div>
-<h1>Websites, über die der <span>Kiez</span> spricht.</h1>
-<p class="lead">Wir bauen die Website Ihres Betriebs modern, mobil und schnell. Zum Festpreis und in 5 Tagen online. Sie sehen das Ergebnis, bevor Sie zahlen.</p>
-<div class="cta-row"><a class="btn lime arrow" href="#anfrage">Kostenlose Vorschau anfordern</a><a class="btn ghost" href="#beispiele">Beispiele ansehen</a></div>
-<p class="small">Unverbindlich · Antwort innerhalb von 24 Stunden</p>
+<main id="top">
+<div class="hero" id="hero">
+<div class="wrap">
+<div class="eyebrow fade"><b>NEU</b>Einführungspreise für die ersten 5 Betriebe</div>
+<h1><span class="ln"><span>Websites,</span></span><span class="ln"><span>über die der</span></span><span class="ln"><span><em>Kiez</em> spricht.</span></span></h1>
+<p class="lead fade">Wir bauen die Website Ihres Betriebs modern, mobil und schnell. Festpreis, in 5 Tagen online, und Sie sehen das Ergebnis, bevor Sie zahlen.</p>
+<div class="cta-row fade"><a class="btn lime arrow" href="#anfrage">Kostenlose Vorschau anfordern</a><a class="btn ghost" href="#arbeiten">Beispiele ansehen</a></div>
+<p class="hint fade">Unverbindlich · Antwort innerhalb von 24 Stunden</p>
 </div>
-<div class="shots">
-<a class="shot" href="beispiele/salon-mira/" aria-label="Beispiel Friseursalon ansehen"><div class="bar"><i></i><i></i><i></i><span>salon-mira.de</span></div><div class="frame"><iframe src="beispiele/salon-mira/" title="Beispiel Friseursalon" loading="lazy" tabindex="-1"></iframe></div></a>
-<a class="shot" href="beispiele/smash-kiez/" aria-label="Beispiel Burgerladen ansehen"><div class="bar"><i></i><i></i><i></i><span>smash-kiez.de</span></div><div class="frame"><iframe src="beispiele/smash-kiez/" title="Beispiel Burgerladen" loading="lazy" tabindex="-1"></iframe></div></a>
-<a class="shot" href="beispiele/fahrschule-spurwechsel/" aria-label="Beispiel Fahrschule ansehen"><div class="bar"><i></i><i></i><i></i><span>fahrschule-spurwechsel.de</span></div><div class="frame"><iframe src="beispiele/fahrschule-spurwechsel/" title="Beispiel Fahrschule" loading="lazy" tabindex="-1"></iframe></div></a>
+<div class="phones" id="phones">
+<div class="phone l"><img src="img/salon-mira-mob.webp" alt="Beispielseite Friseursalon auf dem Handy" width="500" height="1080"></div>
+<div class="phone c"><img src="img/smash-kiez-mob.webp" alt="Beispielseite Burgerladen auf dem Handy" width="500" height="1080"></div>
+<div class="phone r"><img src="img/fahrschule-spurwechsel-mob.webp" alt="Beispielseite Fahrschule auf dem Handy" width="500" height="1080"></div>
+<span class="tagfloat t1">📞 1 Tipp zum Anruf</span><span class="tagfloat t2">⚡ lädt in &lt; 1 s</span>
 </div>
-<div class="strip"><span>Festpreis</span><span>Online in 5 Tagen</span><span>Erst sehen, dann zahlen</span><span>Aus Berlin</span></div>
 </div>
+<div class="marquee" aria-hidden="true"><div class="track">
+<span>Friseure</span><span>Handwerk</span><span>Gastro</span><span>Kanzleien</span><span>Fahrschulen</span><span>Praxen</span><span>Cafés</span><span>Werkstätten</span>
+<span>Friseure</span><span>Handwerk</span><span>Gastro</span><span>Kanzleien</span><span>Fahrschulen</span><span>Praxen</span><span>Cafés</span><span>Werkstätten</span>
+</div></div>
 
-<section id="warum"><div class="wrap">
-<div class="kicker">Warum Kiezmedia</div>
-<h2>Ihre Kunden suchen Sie auf dem Handy.</h2>
-<p class="sub">Und entscheiden in Sekunden, ob sie anrufen. Wir sorgen dafür, dass Ihr Betrieb dort den besten Eindruck macht.</p>
-<div class="bento">
-<div class="tile big"><div class="num">5 Tage</div><div><h3>Von der Vorschau bis online.</h3><p>Kein monatelanges Agenturprojekt. Wir übernehmen Ihre Inhalte, Sie geben Feedback, wir schalten live.</p></div></div>
-<div class="tile"><div class="ico">€</div><h3>Festpreis</h3><p>Sie wissen vorher genau, was es kostet. Keine Stundenzettel, keine Überraschungen.</p></div>
-<div class="tile"><div class="ico">☎</div><h3>Anrufen mit einem Tipp</h3><p>Große Anruf- und Termin-Buttons dort, wo Kunden sie suchen.</p></div>
-<div class="tile"><div class="ico">⚡</div><h3>Schnell &amp; gefunden</h3><p>Leichte Seiten, die sofort laden. Saubere Grundlagen für Google.</p></div>
-<div class="tile"><div class="ico">✓</div><h3>Rechtlich sauber aufgesetzt</h3><p>HTTPS, Impressum und Datenschutz verlinkt, keine unnötigen Cookies.</p></div>
+<section id="vorher-nachher"><div class="wrap">
+<div class="kicker rv">Vorher / Nachher</div>
+<h2 class="rv d1">Von „Willkommen auf unserer Homepage“ zu „Jetzt anrufen“.</h2>
+<p class="sub rv d2">Ziehen Sie den Regler. So groß ist der Unterschied zwischen einer Website von damals und einer, die heute Kunden bringt.</p>
+<div class="ba rv d2" id="ba">
+<div class="pane old" aria-hidden="true">
+<div class="ttl">Elektro Kiez - Homepage - Microsoft Internet Explorer</div>
+<div class="banner">Willkommen auf unserer Homepage!!!</div>
+<table><tr><td class="navc"><b>Navigation</b><a href="#ba">Startseite</a><a href="#ba">Über uns</a><a href="#ba">Leistungen</a><a href="#ba">Gästebuch</a><a href="#ba">Links</a><a href="#ba">Impressum</a></td>
+<td><b>Herzlich Willkommen bei Elektro Kiez!</b><br><br>Wir sind ein Meisterbetrieb für Elektroinstallationen. Auf dieser Homepage finden Sie Informationen über unsere Firma. Bitte benutzen Sie die Navigation auf der linken Seite.<br><br><span class="blink">NEU!!</span> Jetzt auch Rauchmelder!<br><br>Sie sind Besucher Nr. <span class="count">004711</span><div class="uc">🚧 Diese Seite befindet sich im Aufbau 🚧<br>Optimiert für 800x600 und Internet Explorer 6</div></td></tr></table>
+</div>
+<div class="pane new" aria-hidden="true">
+<div class="nh" style="padding-left:max(32px,var(--x))"><b>Elektro Kiez</b><span>📞 030 000 000</span></div>
+<div class="nb"><h3>Strom da, <i>wo er fehlt.</i></h3><p>Meisterbetrieb für Elektroinstallation in Berlin. Heute anrufen, morgen vor Ort.</p><a class="call" href="#ba">Jetzt anrufen</a><div class="cards"><div>⚡ Notdienst 24/7</div><div>✓ Festpreise</div><div>★ Meisterbetrieb</div></div></div>
+</div>
+<div class="handle"></div><span class="lbl a">Vorher</span><span class="lbl b">Nachher</span>
+<input type="range" min="0" max="100" value="50" aria-label="Vorher-Nachher-Regler" id="baRange">
+</div>
+<div class="stats">
+<div class="stat rv"><b><span data-count="5">0</span> Tage</b><span>von der Vorschau bis online</span></div>
+<div class="stat rv d1"><b><span data-count="48">0</span> h</b><span>bis Sie Ihre kostenlose Vorschau sehen</span></div>
+<div class="stat rv d2"><b><span data-count="0">0</span> €</b><span>Risiko: Sie zahlen erst, wenn es Ihnen gefällt</span></div>
 </div>
 </div></section>
 
-<section id="beispiele" style="padding-top:0"><div class="wrap">
-<div class="kicker">Beispiele</div>
-<h2>So sieht das aus.</h2>
-<p class="sub">Drei Beispielseiten, eine pro Paket. Klicken Sie rein, am besten auf dem Handy.</p>
-<div class="examples">
-<a class="ex" href="beispiele/smash-kiez/"><div class="frame"><iframe src="beispiele/smash-kiez/" title="Smash Kiez" loading="lazy" tabindex="-1"></iframe></div><div class="meta"><span class="tag">Simple · 249 €</span><h3>Smash Kiez</h3><p>Burgerladen. Ein starker Onepager mit Karte, Öffnungszeiten und Bestell-Button.</p><span class="go">Seite ansehen</span></div></a>
-<a class="ex" href="beispiele/salon-mira/"><div class="frame"><iframe src="beispiele/salon-mira/" title="Salon Mira" loading="lazy" tabindex="-1"></iframe></div><div class="meta"><span class="tag m">Medium · 490 €</span><h3>Salon Mira</h3><p>Friseursalon. Leistungen mit Preisen, Team, Galerie und Online-Terminbuchung.</p><span class="go">Seite ansehen</span></div></a>
-<a class="ex" href="beispiele/fahrschule-spurwechsel/"><div class="frame"><iframe src="beispiele/fahrschule-spurwechsel/" title="Fahrschule Spurwechsel" loading="lazy" tabindex="-1"></iframe></div><div class="meta"><span class="tag p">Premium · 990 €</span><h3>Fahrschule Spurwechsel</h3><p>Fahrschule. Klassen, Preise, Theorietermine, Standorte und Online-Anmeldung.</p><span class="go">Seite ansehen</span></div></a>
+<section class="work" id="arbeiten"><div class="wrap">
+<div class="kicker rv">Beispiele</div>
+<h2 class="rv d1">Eine Seite pro Paket. Klicken Sie rein.</h2>
+<p class="sub rv d2">Fahren Sie mit der Maus über die Bildschirme, dann scrollt die Seite. Oder öffnen Sie sie gleich auf dem Handy.</p>
+<div class="proj">
+<a class="stage rv" href="beispiele/smash-kiez/"><div class="laptop"><div class="scr" style="background-image:url(img/smash-kiez-desk.webp)"></div></div><div class="phone"><img src="img/smash-kiez-mob.webp" alt="" loading="lazy"></div></a>
+<div class="rv d1"><span class="tag">Simple · 249 €</span><h3>Smash Kiez</h3><p>Burgerladen in Neukölln. Ein kräftiger Onepager, der Hunger macht: Karte, Öffnungszeiten und ein Bestell-Button, der immer sichtbar ist.</p><ul><li>Onepager</li><li>Speisekarte</li><li>Bestell-Button</li><li>Mobile first</li></ul><a class="btn lime arrow" href="beispiele/smash-kiez/">Seite ansehen</a></div>
+</div>
+<div class="proj">
+<a class="stage rv" href="beispiele/salon-mira/"><div class="laptop"><div class="scr" style="background-image:url(img/salon-mira-desk.webp)"></div></div><div class="phone"><img src="img/salon-mira-mob.webp" alt="" loading="lazy"></div></a>
+<div class="rv d1"><span class="tag m">Medium · 490 €</span><h3>Salon Mira</h3><p>Friseursalon in Prenzlauer Berg. Elegant, ruhig, mit Preisliste, Team, Galerie und Online-Terminbuchung.</p><ul><li>Preisliste</li><li>Team</li><li>Galerie</li><li>Terminbuchung</li></ul><a class="btn lime arrow" href="beispiele/salon-mira/">Seite ansehen</a></div>
+</div>
+<div class="proj">
+<a class="stage rv" href="beispiele/fahrschule-spurwechsel/"><div class="laptop"><div class="scr" style="background-image:url(img/fahrschule-spurwechsel-desk.webp)"></div></div><div class="phone"><img src="img/fahrschule-spurwechsel-mob.webp" alt="" loading="lazy"></div></a>
+<div class="rv d1"><span class="tag p">Premium · 990 €</span><h3>Fahrschule Spurwechsel</h3><p>Fahrschule mit zwei Standorten. Klassen und Preise, Theorietermine mit freien Plätzen, FAQ und Online-Anmeldung.</p><ul><li>Klassen &amp; Preise</li><li>Kurstermine</li><li>Standorte</li><li>Anmeldeformular</li></ul><a class="btn lime arrow" href="beispiele/fahrschule-spurwechsel/">Seite ansehen</a></div>
+</div>
+</div></section>
+
+<section id="warum"><div class="wrap">
+<div class="kicker rv">Warum Kiezmedia</div>
+<h2 class="rv d1">Ihre Kunden suchen Sie auf dem Handy.</h2>
+<p class="sub rv d2">Und entscheiden in Sekunden, ob sie anrufen. Wir sorgen dafür, dass Ihr Betrieb dort den besten Eindruck macht.</p>
+<div class="bento">
+<div class="tile w2 rv"><div class="ico">⚡</div><h3>Schnell geladen, schnell angerufen.</h3><p>Leichte Seiten ohne Ballast, große Anruf- und Termin-Buttons genau dort, wo der Daumen hinkommt.</p><div class="meter"><i></i></div><div class="mrow"><span>Unser Ziel für jede Seite</span><span>Lighthouse 90+</span></div></div>
+<div class="tile rv d1"><div class="ico">€</div><h3>Festpreis</h3><p>Sie wissen vorher genau, was es kostet. Keine Stundenzettel.</p></div>
+<div class="tile rv"><div class="ico">↻</div><h3>Inhalte übernommen</h3><p>Bei einem Relaunch ziehen wir Ihre Texte und Leistungen einfach um.</p></div>
+<div class="tile rv d1"><div class="ico">✓</div><h3>Sauber aufgesetzt</h3><p>HTTPS, Impressum und Datenschutz verlinkt, keine unnötigen Cookies.</p></div>
+<div class="tile rv d2"><div class="ico">⌂</div><h3>Aus Berlin</h3><p>Wir kommen auch vorbei – für Fotos oder einen Kaffee.</p></div>
 </div>
 </div></section>
 
 <section id="preise" style="padding-top:0"><div class="wrap">
-<div class="center"><div class="kicker">Preise</div><h2>Ein Preis. Keine Überraschungen.</h2><p class="sub">Einmaliger Festpreis. Die Hälfte bei Auftrag, den Rest erst, wenn Ihre Seite online ist.</p></div>
+<div class="center"><div class="kicker rv">Preise</div><h2 class="rv d1">Ein Preis. Keine Überraschungen.</h2><p class="sub rv d2">Einmaliger Festpreis. Die Hälfte bei Auftrag, den Rest erst, wenn Ihre Seite online ist.</p></div>
 <div class="plans">
-<div class="plan"><h3>Simple</h3><p class="for">Für Betriebe, die schnell online sein wollen.</p>
+<div class="plan rv"><h3>Simple</h3><p class="for">Für Betriebe, die schnell online sein wollen.</p>
 <div class="price">249 €<s>390 €</s></div><div class="once">einmalig · Einführungspreis</div>
 <ul><li>Onepager mit allen wichtigen Infos</li><li>Perfekt auf dem Handy</li><li>Anruf-, WhatsApp- oder Bestell-Button</li><li>Öffnungszeiten, Adresse, Kartenlink</li><li>Impressum &amp; Datenschutz eingerichtet</li><li>Online in 5 Tagen</li></ul>
-<a class="btn" href="#anfrage" data-paket="Simple">Simple anfragen</a><a class="demo" href="beispiele/smash-kiez/">Beispiel ansehen: Burgerladen</a></div>
-<div class="plan hot"><h3>Medium <span class="pill">Beliebt</span></h3><p class="for">Für Betriebe mit mehreren Leistungen – oder alter Website.</p>
+<a class="btn" href="#anfrage" data-paket="Simple">Simple anfragen</a><a class="demo" href="beispiele/smash-kiez/">Beispiel: Burgerladen</a></div>
+<div class="plan hot rv d1"><h3>Medium <span class="pill">Beliebt</span></h3><p class="for">Für mehrere Leistungen – oder eine alte Website.</p>
 <div class="price">490 €<s>790 €</s></div><div class="once">einmalig · Einführungspreis</div>
 <ul><li>Alles aus Simple</li><li>Bis zu 5 Seiten – oder Relaunch bis 10 Seiten</li><li>Ihre bisherigen Inhalte übernommen</li><li>Online-Terminbuchung verknüpft</li><li>Galerie &amp; Team</li><li>Alte Links weitergeleitet, Google-Grundlagen</li><li>2 Korrekturrunden</li></ul>
-<a class="btn" href="#anfrage" data-paket="Medium">Medium anfragen</a><a class="demo" href="beispiele/salon-mira/">Beispiel ansehen: Friseursalon</a></div>
-<div class="plan"><h3>Premium</h3><p class="for">Für den Auftritt, der sich von allen abhebt.</p>
+<a class="btn" href="#anfrage" data-paket="Medium">Medium anfragen</a><a class="demo" href="beispiele/salon-mira/">Beispiel: Friseursalon</a></div>
+<div class="plan rv d2"><h3>Premium</h3><p class="for">Für den Auftritt, der sich von allen abhebt.</p>
 <div class="price">990 €<s>1.490 €</s></div><div class="once">einmalig · Einführungspreis</div>
 <ul><li>Alles aus Medium</li><li>Bis zu 12 Seiten, individuelles Design</li><li>Texte schreiben wir für Sie</li><li>Anmelde- oder Anfrageformular</li><li>Fotos vor Ort (Berlin)</li><li>Google-Unternehmensprofil eingerichtet</li><li>3 Monate Pflege inklusive</li></ul>
-<a class="btn" href="#anfrage" data-paket="Premium">Premium anfragen</a><a class="demo" href="beispiele/fahrschule-spurwechsel/">Beispiel ansehen: Fahrschule</a></div>
+<a class="btn" href="#anfrage" data-paket="Premium">Premium anfragen</a><a class="demo" href="beispiele/fahrschule-spurwechsel/">Beispiel: Fahrschule</a></div>
 </div>
-<div class="addon"><div><strong>Pflege &amp; Hosting · 19 € / Monat</strong><br><span class="small">Hosting, SSL, Updates und kleine Änderungen inklusive. Monatlich kündbar, optional.</span></div><a class="btn ghost sm" href="#faq">Mehr in den FAQ</a></div>
+<div class="addon rv"><div><strong>Pflege &amp; Hosting · 19 € / Monat</strong><br><span class="small">Hosting, SSL, Updates und kleine Änderungen inklusive. Optional und monatlich kündbar.</span></div><a class="btn ghost sm" href="#anfrage">Mit anfragen</a></div>
 <p class="small center" style="margin-top:18px">Alle Preise zzgl. Domain (gehört Ihnen). Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
 </div></section>
 
 <section id="ablauf" style="padding-top:0"><div class="wrap">
-<div class="kicker">Ablauf</div>
-<h2>In 4 Schritten online.</h2>
-<p class="sub">Sie müssen nichts vorbereiten. Wir melden uns, Sie sagen ja oder nein.</p>
-<div class="steps">
-<div class="step"><h3>Vorschau</h3><p>Sie schicken uns Ihre Website oder Ihren Betrieb. Wir bauen eine kostenlose Vorschau.</p></div>
-<div class="step"><h3>Entscheiden</h3><p>Gefällt sie Ihnen, wählen Sie Ihr Paket und zahlen die Hälfte.</p></div>
-<div class="step"><h3>Feinschliff</h3><p>Ihre Wünsche, Fotos und Korrekturen. Wir setzen alles um.</p></div>
-<div class="step"><h3>Live</h3><p>Wir schalten auf Ihrer Domain live. Erst dann zahlen Sie den Rest.</p></div>
+<div class="kicker rv">Ablauf</div>
+<h2 class="rv d1">In 4 Schritten online.</h2>
+<p class="sub rv d2">Sie müssen nichts vorbereiten. Wir melden uns, Sie sagen ja oder nein.</p>
+<div class="steps" id="steps"><div class="fill"></div>
+<div class="step"><small>01</small><h3>Vorschau</h3><p>Sie nennen uns Ihre Website oder Ihren Betrieb. Wir bauen eine kostenlose Vorschau.</p></div>
+<div class="step"><small>02</small><h3>Entscheiden</h3><p>Gefällt sie Ihnen, wählen Sie Ihr Paket und zahlen die Hälfte.</p></div>
+<div class="step"><small>03</small><h3>Feinschliff</h3><p>Ihre Wünsche, Fotos und Korrekturen. Wir setzen alles um.</p></div>
+<div class="step"><small>04</small><h3>Live</h3><p>Wir schalten auf Ihrer Domain live. Erst dann zahlen Sie den Rest.</p></div>
 </div>
 </div></section>
 
-<div class="wrap"><a class="bigcta" href="#anfrage"><div class="l">Ihre Vorschau ist kostenlos.<small>Schicken Sie uns Ihre Website – in 48 Stunden sehen Sie, wie sie neu aussehen kann.</small></div><div class="r">→</div></a></div>
+<div class="wrap rv"><a class="bigcta" href="#anfrage"><div class="l">Ihre Vorschau ist kostenlos.<small>Schicken Sie uns Ihre Website – in 48 Stunden sehen Sie, wie sie neu aussehen kann.</small></div><div class="r">→</div></a></div>
 
 <section id="faq"><div class="wrap">
-<div class="center"><div class="kicker">FAQ</div><h2>Häufige Fragen</h2></div>
-<div class="faq">
+<div class="center"><div class="kicker rv">FAQ</div><h2 class="rv d1">Häufige Fragen</h2></div>
+<div class="faq rv d2">
 <details><summary>Muss ich etwas vorbereiten?</summary><p>Nein. Bei einem Relaunch übernehmen wir die Inhalte Ihrer bisherigen Website. Ohne Website reichen uns ein paar Infos am Telefon.</p></details>
 <details><summary>Was kostet die Vorschau?</summary><p>Nichts. Gefällt sie Ihnen nicht, ist die Sache erledigt – ohne Kosten und ohne Verpflichtung.</p></details>
 <details><summary>Was passiert mit meiner Domain und meinen E-Mails?</summary><p>Die Domain bleibt Ihre. E-Mail-Postfächer laufen unverändert weiter, wir ändern nur, wohin die Website zeigt.</p></details>
@@ -102,9 +309,9 @@
 </div></section>
 
 <section id="anfrage" style="padding-top:0"><div class="wrap contact">
-<div><div class="kicker">Kontakt</div><h2>Lassen Sie uns loslegen.</h2><p class="sub" style="margin-bottom:0">Sagen Sie uns, um welchen Betrieb es geht. Wir melden uns innerhalb von 24 Stunden mit Ihrer kostenlosen Vorschau.</p>
+<div class="rv"><div class="kicker">Kontakt</div><h2>Lassen Sie uns loslegen.</h2><p class="sub" style="margin-bottom:0">Sagen Sie uns, um welchen Betrieb es geht. Wir melden uns innerhalb von 24 Stunden mit Ihrer kostenlosen Vorschau.</p>
 <ul><li><span class="ico">@</span><a href="mailto:hallokiezmedia@gmail.com">hallokiezmedia@gmail.com</a></li><li><span class="ico">⌂</span>Berlin</li></ul></div>
-<form action="https://formsubmit.co/hallokiezmedia@gmail.com" method="POST">
+<form class="rv d1" action="https://formsubmit.co/hallokiezmedia@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="Neue Anfrage über kiezmedia">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="https://mrletsfail.github.io/kiezmedia-site/danke.html">
@@ -120,9 +327,28 @@
 </div></section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Kiezmedia GbR · Berlin</span><span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span></div></footer>
+<footer><div class="wrap"><div class="big">Kiez<i>media</i>.</div><div class="row"><span>© 2026 Kiezmedia GbR · Berlin</span><span><a href="#anfrage">Kontakt</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span></div></div></footer>
+
 <script>
-document.querySelectorAll('[data-paket]').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById('paket');if(s)s.value=a.dataset.paket}));
+(()=>{
+const nav=document.getElementById('nav'),hero=document.getElementById('hero'),phones=document.getElementById('phones'),steps=document.getElementById('steps');
+const onScroll=()=>{
+  const y=scrollY;nav.classList.toggle('solid',y>hero.offsetHeight-80);
+  const p=Math.min(1,Math.max(0,y/500));phones.style.setProperty('--p',p.toFixed(3));
+  const r=steps.getBoundingClientRect(),sp=Math.min(1,Math.max(0,(innerHeight*.75-r.top)/(r.height+innerHeight*.3)));
+  steps.style.setProperty('--sp',sp.toFixed(3));steps.querySelectorAll('.step').forEach((s,i)=>s.classList.toggle('on',sp>=i/4+.05));
+};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+hero.addEventListener('pointermove',e=>{const b=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-b.left)+'px');hero.style.setProperty('--my',(e.clientY-b.top)+'px')});
+let pending=[...document.querySelectorAll('.rv')];
+const reveal=()=>{pending=pending.filter(el=>{if(el.getBoundingClientRect().top>innerHeight*.9)return true;el.classList.add('in');
+  el.querySelectorAll('[data-count]').forEach(c=>{const t=+c.dataset.count,t0=performance.now();const f=n=>{const k=Math.min(1,(n-t0)/1200);c.textContent=Math.round(t*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)});
+  return false})};
+addEventListener('scroll',reveal,{passive:true});addEventListener('resize',reveal);reveal();
+const ba=document.getElementById('ba'),rg=document.getElementById('baRange');rg.addEventListener('input',()=>ba.style.setProperty('--x',rg.value+'%'));
+let demo=true;const wig=()=>{if(demo&&ba.getBoundingClientRect().top<innerHeight*.5){demo=false;let t=0;const a=setInterval(()=>{t+=.05;const v=50+Math.sin(t)*22;ba.style.setProperty('--x',v+'%');rg.value=v;if(t>Math.PI*2){clearInterval(a);ba.style.setProperty('--x','50%');rg.value=50}},30)}};addEventListener('scroll',wig,{passive:true});
+document.querySelectorAll('[data-paket]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('paket').value=a.dataset.paket}));
+})();
 </script>
 </body>
 </html>
